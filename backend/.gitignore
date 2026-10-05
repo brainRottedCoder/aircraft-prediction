@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+report.xml
+
+# Environment
+.env
+.env.local
+
+# Seed reconciliation report, written by app/seed/run.py
+seed_reconciliation.log
+
+# 43 MB of NASA C-MAPSS telemetry: third-party, unchanged upstream, re-fetched by
+# `make fetch-data`. FD001 (~5.5 MB) is committed because every known public
+# mirror is dead and the Render build requires it. FD002–FD004 stay ignored.
+data/cmapss/*
+!data/cmapss/*_FD001.txt
+!data/cmapss/RUL_FD001.txt
+!data/cmapss/README.md
+!data/cmapss/readme.txt
+
+# Trained boosters and feature contracts. Produced by ml/notebooks/Model_training_249.ipynb
+# on a Colab VM, staged by `python -m scripts.stage_ml_artifacts`. A booster is ~900 KB
+# and regenerable; never commit one (see docs/08 §4).
+# data/ml/
+
+# Local database dumps from `make db-dump`
+backup.sql.gz
+*.sql

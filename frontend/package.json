@@ -1,0 +1,26 @@
+{
+  "name": "fleet-digital-twin-web",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Fleet Digital Twin operations console: 3D aircraft inspector, health dashboard and maintenance plan.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "test": "node --test tests/auth.test.mjs tests/bundle.test.mjs",
+    "lint": "echo \"No JS linter is configured; the API is linted with ruff and both halves are type-checked in CI.\""
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "0.128.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}

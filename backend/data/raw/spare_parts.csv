@@ -1,0 +1,41 @@
+part_id,part_name,component_id,component_name,aircraft_model,quantity_available,minimum_stock,reorder_quantity,supplier,lead_time_days,unit_cost_inr,storage_location,last_restock_date,criticality,compatible_component
+PART001,Fan Blade,COMP001,Fan,All,28,14,29,SkyForge Components,39,2701,Base-E,2024-09-08,Medium,Fan
+PART002,Fan Bearing,COMP001,Fan,Type-B,17,5,19,VectorSpare Systems,3,2000,Base-C,2026-01-14,Medium,Fan
+PART003,Fan Seal,COMP001,Fan,All,2,3,12,VectorSpare Systems,13,3200,Base-E,2025-09-07,Low,Fan
+PART004,Fan Vane Actuator,COMP001,Fan,All,18,4,13,SkyForge Components,17,2000,Base-B,2024-04-18,Medium,Fan
+PART005,Fan Retainer,COMP001,Fan,Type-A,19,5,13,VectorSpare Systems,18,2000,Base-A,2026-06-10,Low,Fan
+PART006,Fan Spinner,COMP001,Fan,All,32,29,44,VectorSpare Systems,12,2000,Base-A,2025-12-31,Medium,Fan
+PART007,Fan Blade Root,COMP001,Fan,All,9,4,18,SkyForge Components,5,2000,Base-E,2023-12-24,Medium,Fan
+PART008,LPC Blade,COMP002,Low Pressure Compressor,All,24,13,29,SkyForge Components,18,2000,Base-D,2024-06-10,Low,Low Pressure Compressor
+PART009,LPC Vane,COMP002,Low Pressure Compressor,Type-A,13,4,9,VectorSpare Systems,46,2000,Base-B,2024-03-15,Low,Low Pressure Compressor
+PART010,LPC Seal,COMP002,Low Pressure Compressor,Type-C,1,14,23,AeroParts Supply Co.,5,4800,Base-D,2023-04-28,Medium,Low Pressure Compressor
+PART011,LPC Bearing,COMP002,Low Pressure Compressor,Type-B,11,9,18,AeroParts Supply Co.,26,2000,Base-B,2023-04-04,Low,Low Pressure Compressor
+PART012,LPC Stator Ring,COMP002,Low Pressure Compressor,All,10,7,19,AeroParts Supply Co.,12,2000,Base-E,2026-07-22,High,Low Pressure Compressor
+PART013,LPC Rotor Hub,COMP002,Low Pressure Compressor,Type-C,15,7,16,VectorSpare Systems,14,2000,Base-D,2024-10-09,Medium,Low Pressure Compressor
+PART014,LPC Blade Retainer,COMP002,Low Pressure Compressor,All,15,5,16,Nimbus Engineering,8,2000,Base-C,2024-07-12,Medium,Low Pressure Compressor
+PART015,HPC Blade,COMP003,High Pressure Compressor,Type-B,14,10,25,VectorSpare Systems,12,2000,Base-C,2025-11-20,Medium,High Pressure Compressor
+PART016,HPC Vane,COMP003,High Pressure Compressor,Type-A,9,5,10,VectorSpare Systems,35,2000,Base-E,2025-03-30,Low,High Pressure Compressor
+PART017,HPC Seal,COMP003,High Pressure Compressor,Type-C,2,3,10,SkyForge Components,22,5200,Base-C,2026-07-22,High,High Pressure Compressor
+PART018,HPC Bearing,COMP003,High Pressure Compressor,Type-A,6,3,12,Nimbus Engineering,46,2000,Base-A,2026-01-22,Medium,High Pressure Compressor
+PART019,HPC Stator Segment,COMP003,High Pressure Compressor,All,17,8,22,AeroParts Supply Co.,32,2000,Base-A,2024-12-12,High,High Pressure Compressor
+PART020,HPC Rotor Disk,COMP003,High Pressure Compressor,Type-C,23,21,52,AeroParts Supply Co.,20,2000,Base-E,2024-07-01,Low,High Pressure Compressor
+PART021,HPC Blade Lock,COMP003,High Pressure Compressor,All,17,8,20,Nimbus Engineering,46,2000,Base-E,2026-09-16,Medium,High Pressure Compressor
+PART022,Combustor Liner,COMP004,Combustor,Type-B,15,7,17,SkyForge Components,20,4582,Base-E,2025-11-05,Medium,Combustor
+PART023,Fuel Nozzle,COMP004,Combustor,All,17,9,19,Nimbus Engineering,25,2156,Base-B,2026-08-08,High,Combustor
+PART024,Combustor Seal,COMP004,Combustor,All,27,17,38,VectorSpare Systems,12,3900,Base-E,2023-01-21,Medium,Combustor
+PART025,Igniter Plug,COMP004,Combustor,All,1,9,23,Nimbus Engineering,16,2000,Base-E,2026-04-15,Medium,Combustor
+PART026,Combustor Dome,COMP004,Combustor,Type-A,14,6,18,Nimbus Engineering,9,2000,Base-E,2025-07-24,Medium,Combustor
+PART027,Flame Stabilizer,COMP004,Combustor,Type-C,26,15,30,Nimbus Engineering,28,2000,Base-D,2023-01-30,Medium,Combustor
+PART028,HPT Blade,COMP005,High Pressure Turbine,Type-A,21,10,21,SkyForge Components,7,2000,Base-B,2025-05-18,Medium,High Pressure Turbine
+PART029,HPT Nozzle Guide Vane,COMP005,High Pressure Turbine,Type-A,2,20,40,AeroParts Supply Co.,96,2850000,Base-A,2025-09-26,High,High Pressure Turbine
+PART030,HPT Disk Module,COMP005,High Pressure Turbine,All,3,8,20,SkyForge Components,72,1650000,Base-E,2022-02-21,High,High Pressure Turbine
+PART031,HPT Seal,COMP005,High Pressure Turbine,All,1,3,16,AeroParts Supply Co.,118,4000000,Base-D,2024-11-03,High,High Pressure Turbine
+PART032,HPT Bearing,COMP005,High Pressure Turbine,All,4,5,9,SkyForge Components,77,890000,Base-B,2026-03-17,High,High Pressure Turbine
+PART033,HPT Cooling Insert,COMP005,High Pressure Turbine,Type-B,35,22,40,VectorSpare Systems,49,4600,Base-C,2024-02-09,Low,High Pressure Turbine
+PART034,HPT Blade Retainer,COMP005,High Pressure Turbine,Type-B,35,23,41,AeroParts Supply Co.,24,2000,Base-E,2024-11-10,Medium,High Pressure Turbine
+PART035,LPT Blade,COMP006,Low Pressure Turbine,Type-C,15,7,17,AeroParts Supply Co.,5,3500,Base-B,2024-10-16,Low,Low Pressure Turbine
+PART036,LPT Nozzle Guide Vane,COMP006,Low Pressure Turbine,Type-A,14,6,20,SkyForge Components,14,2000,Base-E,2024-02-21,Medium,Low Pressure Turbine
+PART037,LPT Bearing,COMP006,Low Pressure Turbine,Type-A,24,19,31,SkyForge Components,7,2000,Base-E,2026-07-02,Medium,Low Pressure Turbine
+PART038,LPT Seal,COMP006,Low Pressure Turbine,Type-C,13,4,12,Nimbus Engineering,11,2000,Base-E,2026-01-23,Medium,Low Pressure Turbine
+PART039,LPT Cooling Insert,COMP006,Low Pressure Turbine,Type-A,7,4,18,Nimbus Engineering,40,2000,Base-D,2022-12-31,High,Low Pressure Turbine
+PART040,LPT Blade Retainer,COMP006,Low Pressure Turbine,All,25,11,18,VectorSpare Systems,23,2000,Base-E,2026-09-27,High,Low Pressure Turbine

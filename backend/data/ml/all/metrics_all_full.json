@@ -1,0 +1,88 @@
+{
+  "candidate": "ALL",
+  "variant": "full-data refit",
+  "subsets": [
+    "FD001",
+    "FD002",
+    "FD003",
+    "FD004"
+  ],
+  "n_features": 32,
+  "constant_dropped": [
+    "s1",
+    "s5",
+    "s18",
+    "s19"
+  ],
+  "engines_trained": 709,
+  "rows_trained": 160359,
+  "rul_cap": 125,
+  "roll_window": 5,
+  "n_estimators": 161,
+  "rounds_source": "161.4 = mean best iteration over 5 CV folds (cell 25); early stopping disabled",
+  "selection": {
+    "metric": "cv_rmse_mean",
+    "selected_on": "training data only, engine-level cross-validation",
+    "official_test_used_for_selection": false
+  },
+  "has_holdout": false,
+  "cv_rmse": {
+    "mean": 17.369445127836507,
+    "std": 0.9502817292224377,
+    "folds": [
+      18.849,
+      16.779,
+      16.595,
+      18.14,
+      16.484
+    ],
+    "role": "model-selection / performance metric",
+    "measured_on": "709 engines, 160359 rows, 5-fold grouped CV, models trained on 567 engines each"
+  },
+  "official_test_rmse": {
+    "FD001": 17.94226758832421,
+    "FD002": 28.318129367558704,
+    "FD003": 20.17549321636292,
+    "FD004": 30.21513837770836
+  },
+  "holdout_model_reference": {
+    "engines_trained": 567,
+    "official_test_rmse": {
+      "FD001": 18.354913834678953,
+      "FD002": 28.424762299000555,
+      "FD003": 20.224806536833743,
+      "FD004": 29.919083959585677
+    },
+    "note": "same recipe on 80% of engines; the refit exists to use all of them"
+  },
+  "official_test_detail": {
+    "FD001": {
+      "engines": 100,
+      "rmse": 17.94226758832421,
+      "mae": 13.079276552200318,
+      "asymmetric_score": 0.4542785211854879,
+      "nasa_score": 1016.9492149312235
+    },
+    "FD002": {
+      "engines": 259,
+      "rmse": 28.318129367558704,
+      "mae": 19.459568970912212,
+      "asymmetric_score": 0.39639414685069,
+      "nasa_score": 11213.20984922739
+    },
+    "FD003": {
+      "engines": 100,
+      "rmse": 20.17549321636292,
+      "mae": 15.025635576248169,
+      "asymmetric_score": 0.41677621422737343,
+      "nasa_score": 1717.3529330084737
+    },
+    "FD004": {
+      "engines": 248,
+      "rmse": 30.21513837770836,
+      "mae": 23.12803433979711,
+      "asymmetric_score": 0.3086069483131732,
+      "nasa_score": 7273.7586213943505
+    }
+  }
+}

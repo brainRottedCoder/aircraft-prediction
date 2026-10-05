@@ -1,0 +1,100 @@
+# Fleet Digital Twin — web tier.
+#
+# Serves the immutable Vite build and terminates the browser's origin, reverse-proxying
+# the API and the WebSocket to the FastAPI monolith. Because both live behind one origin
+# there is no CORS preflight, the frontend needs no build-time API URL, and the WebSocket
+# upgrade needs no special client configuration.
+
+# ${FDT_API_HOST} is substituted by the image's envsubst pass. Under Compose it is the
+# `api` service name, resolved by Docker's embedded DNS; `api depends_on: db healthy`
+# means this never reaches a cold database. Overridable to an address so the config can
+# also be validated with `nginx -t` outside a Compose network (see .github/workflows/ci.yml).
+upstream fdt_api {
+    server ${FDT_API_HOST}:8000;
+    keepalive 32;
+}
+
+server {
+    listen 8080;
+    server_name _;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # 3D assets are large binaries; gzip costs CPU for little gain on .glb, but the JSON
+    # sidecar and the app shell compress well.
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css application/javascript application/json
+               image/svg+xml application/wasm;
+
+    # The upstream's own /healthz, exposed for the compose healthcheck and for probes.
+    location = /healthz {
+        proxy_pass http://fdt_api/healthz;
+        access_log off;
+    }
+
+    # REST. `Host` is rewritten so the API's origin check (used by the WebSocket) sees
+    # the public hostname rather than the internal service name.
+    location /api/ {
+        proxy_pass http://fdt_api;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Connection "";
+        proxy_read_timeout 60s;
+    }
+
+    # WebSocket upgrade. The 1.2 s replay tick means a long-lived connection, so the
+    # read timeout has to exceed any plausible proxy idle window.
+    location /ws/ {
+        proxy_pass http://fdt_api;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_read_timeout 3600s;
+        proxy_send_timeout 3600s;
+        proxy_buffering off;
+    }
+
+    # Hashed build output is safe to cache forever; index.html must never be cached or
+    # a deploy leaves clients pointing at asset filenames that no longer exist.
+    location ~* \.(js|css|woff2?|png|jpg|jpeg|gif|svg|ico|glb|bin|gz|json)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    # engine.bin.gz is pre-gzipped and the client gunzips it with DecompressionStream
+    # after sniffing magic bytes, so nginx must not re-encode it.
+    location ~* \.gz$ {
+        gzip off;
+        default_type application/octet-stream;
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    location = /index.html {
+        add_header Cache-Control "no-store, must-revalidate";
+    }
+
+    # SPA fallback: every unmatched path renders the shell so client routing works.
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Baseline hardening. The app loads no third-party origins, so the policy can be tight.
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+
+    server_tokens off;
+}

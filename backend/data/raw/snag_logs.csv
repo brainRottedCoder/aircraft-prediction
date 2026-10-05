@@ -1,0 +1,801 @@
+snag_id,maintenance_id,aircraft_id,date_reported,reported_by_role,snag_text,severity,resolution_text
+SNAG0001,MR00826,AC077,2023-02-19,Technician,"EGT rise observed at high power, requires follow-up.",Minor,Inspected component and recorded condition.
+SNAG0002,MR01327,AC097,2023-07-16,Pilot,Excess vibration reported during climb.,Critical,Inspected component and recorded condition.
+SNAG0003,MR00858,AC055,2023-09-05,Technician,Engine oil pressure trending down.,Minor,Inspected component and recorded condition.
+SNAG0004,MR01483,AC085,2025-05-02,Technician,Fuel flow unstable during climb.,Critical,Maintenance action completed and system rechecked.
+SNAG0005,MR00227,AC077,2023-08-12,Engineer,"Stall event during power transition, inspect compressor.",Major,Inspected component and recorded condition.
+SNAG0006,MR00589,AC075,2026-01-17,Technician,Low pressure indication requires inspection.,Critical,Inspected component and recorded condition.
+SNAG0007,MR00006,AC071,2023-06-28,Pilot,EGT above normal trend during power increase.,Minor,Maintenance action completed and system rechecked.
+SNAG0008,MR00646,AC008,2025-10-29,Pilot,Engine vibration above limit during run-up.,Major,Maintenance action completed and system rechecked.
+SNAG0009,MR01192,AC031,2025-09-27,Technician,Momentary stall reported by pilot during climb.,Major,Inspected component and recorded condition.
+SNAG0010,MR00020,AC082,2025-04-01,Engineer,Brief compressor stall reported during climb.,Major,Removed defective part and installed replacement.
+SNAG0011,MR00637,AC022,2024-09-25,Pilot,Sensor signal intermittent during engine run.,Minor,Inspected component and recorded condition.
+SNAG0012,MR00401,AC100,2023-05-31,Engineer,Compressor disturbance noted during acceleration.,Minor,Maintenance action completed and system rechecked.
+SNAG0013,MR01330,AC006,2026-01-11,Pilot,Low oil pressure indication reported in flight.,Minor,Removed defective part and installed replacement.
+SNAG0014,MR01472,AC092,2022-08-01,Technician,Abnormal vibration noted by crew during flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0015,MR00933,AC077,2022-11-21,Pilot,Turbine blade erosion requires attention.,Minor,Removed defective part and installed replacement.
+SNAG0016,MR01446,AC055,2024-12-12,Pilot,Fuel flow higher than expected at cruise power.,Critical,Inspected component and recorded condition.
+SNAG0017,MR00641,AC009,2024-03-16,Engineer,"Stall event during power transition, inspect compressor.",Minor,Maintenance action completed and system rechecked.
+SNAG0018,MR00659,AC088,2023-12-25,Technician,Oil pressure fluctuating during operation.,Major,Maintenance action completed and system rechecked.
+SNAG0019,MR00591,AC049,2025-03-04,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Inspected component and recorded condition.
+SNAG0020,MR01033,AC022,2026-03-14,Technician,Fuel flow unstable during climb.,Major,Inspected component and recorded condition.
+SNAG0021,MR00877,AC095,2023-12-24,Engineer,Abnormal vibration noted by crew during flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0022,MR01097,AC051,2025-05-02,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Maintenance action completed and system rechecked.
+SNAG0023,MR00956,AC025,2026-05-13,Technician,Turbine blade erosion requires attention.,Major,Inspected component and recorded condition.
+SNAG0024,MR00528,AC081,2024-06-21,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Maintenance action completed and system rechecked.
+SNAG0025,MR00089,AC060,2025-10-17,Pilot,Engine vibration increased during power change.,Minor,Inspected component and recorded condition.
+SNAG0026,MR01494,AC020,2022-12-26,Technician,Engine oil pressure trending down.,Major,Inspected component and recorded condition.
+SNAG0027,MR00920,AC079,2024-01-11,Pilot,Fuel flow unstable during climb.,Minor,Inspected component and recorded condition.
+SNAG0028,MR00658,AC031,2022-12-27,Pilot,Turbine blade erosion requires attention.,Minor,Inspected component and recorded condition.
+SNAG0029,MR00136,AC088,2024-05-13,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Inspected component and recorded condition.
+SNAG0030,MR01293,AC002,2025-04-06,Technician,"Possible bearing degradation, inspect further.",Minor,Inspected component and recorded condition.
+SNAG0031,MR00370,AC018,2025-05-23,Pilot,Compressor blade erosion noted.,Major,Inspected component and recorded condition.
+SNAG0032,MR00359,AC047,2024-07-14,Technician,"Stall event during power transition, inspect compressor.",Minor,Maintenance action completed and system rechecked.
+SNAG0033,MR00239,AC054,2025-09-07,Technician,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0034,MR00416,AC032,2023-02-25,Technician,"Engine EGT slightly high on climb, no other abnormality.",Critical,Maintenance action completed and system rechecked.
+SNAG0035,MR01095,AC075,2023-11-21,Technician,Pressure lower than expected after power increase.,Minor,Inspected component and recorded condition.
+SNAG0036,MR00350,AC033,2024-09-23,Technician,Blade leading edge showing erosion.,Major,Inspected component and recorded condition.
+SNAG0037,MR00269,AC100,2026-07-27,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Major,Inspected component and recorded condition.
+SNAG0038,MR01020,AC044,2024-08-31,Technician,"Pressure drop observed, no visible leakage found.",Minor,Inspected component and recorded condition.
+SNAG0039,MR00766,AC062,2025-09-01,Engineer,"Pressure drop observed, no visible leakage found.",Major,Maintenance action completed and system rechecked.
+SNAG0040,MR00944,AC014,2025-01-15,Engineer,"High vibration observed, possible rotating imbalance.",Major,Inspected component and recorded condition.
+SNAG0041,MR01313,AC061,2022-11-18,Pilot,"Vibration noted at high RPM, needs inspection.",Critical,Inspected component and recorded condition.
+SNAG0042,MR01048,AC044,2022-12-05,Engineer,Fuel consumption higher than expected.,Minor,Functional test completed and readings verified.
+SNAG0043,MR01313,AC061,2022-11-18,Technician,Engine vibration above limit during run-up.,Minor,Inspected component and recorded condition.
+SNAG0044,MR00566,AC039,2023-12-15,Technician,Vibration trend increasing at operating RPM.,Major,Inspected component and recorded condition.
+SNAG0045,MR00044,AC083,2026-02-04,Pilot,"Possible bearing degradation, inspect further.",Critical,Inspected component and recorded condition.
+SNAG0046,MR01299,AC053,2024-02-12,Technician,Engine oil pressure trending down.,Minor,Inspected component and recorded condition.
+SNAG0047,MR01413,AC077,2025-04-26,Technician,"High vibration observed, possible rotating imbalance.",Major,Removed defective part and installed replacement.
+SNAG0048,MR01304,AC043,2022-12-25,Technician,Vibration trend increasing at operating RPM.,Major,Inspected component and recorded condition.
+SNAG0049,MR01322,AC002,2025-01-14,Technician,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0050,MR01346,AC053,2025-05-18,Engineer,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0051,MR00955,AC012,2024-10-25,Technician,Fuel consumption higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0052,MR00128,AC086,2023-02-19,Pilot,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0053,MR01496,AC026,2023-07-16,Pilot,Turbine blade erosion requires attention.,Minor,Removed defective part and installed replacement.
+SNAG0054,MR01433,AC040,2025-01-28,Technician,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0055,MR00206,AC021,2024-05-18,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Inspected component and recorded condition.
+SNAG0056,MR01107,AC001,2026-04-01,Engineer,Bearing wear noted during inspection.,Major,Inspected component and recorded condition.
+SNAG0057,MR00381,AC017,2026-08-07,Pilot,Fuel flow higher than expected at cruise power.,Minor,Inspected component and recorded condition.
+SNAG0058,MR01089,AC050,2023-03-29,Technician,Fuel flow higher than expected at cruise power.,Major,Maintenance action completed and system rechecked.
+SNAG0059,MR00582,AC090,2024-05-23,Engineer,Fuel flow trend outside normal range.,Minor,Inspected component and recorded condition.
+SNAG0060,MR01298,AC039,2024-09-04,Engineer,Intermittent indication traced to sensor.,Minor,Removed defective part and installed replacement.
+SNAG0061,MR00544,AC057,2025-05-22,Pilot,"High vibration observed, possible rotating imbalance.",Minor,Inspected component and recorded condition.
+SNAG0062,MR01220,AC090,2022-12-11,Pilot,"High EGT noted during climb, #1 eng. Monitor next sortie.",Critical,Maintenance action completed and system rechecked.
+SNAG0063,MR00029,AC006,2026-04-10,Pilot,"Vib level above normal, monitor after inspection.",Critical,Functional test completed and readings verified.
+SNAG0064,MR00028,AC091,2024-04-15,Pilot,Turbine blade erosion requires attention.,Minor,Removed defective part and installed replacement.
+SNAG0065,MR00089,AC060,2025-10-17,Technician,Excess vibration reported during climb.,Minor,Inspected component and recorded condition.
+SNAG0066,MR01259,AC099,2025-02-17,Technician,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0067,MR00336,AC096,2024-10-16,Pilot,Faulty sensor indication reported by crew.,Critical,Inspected component and recorded condition.
+SNAG0068,MR00017,AC033,2023-09-15,Engineer,Brief compressor stall reported during climb.,Minor,Maintenance action completed and system rechecked.
+SNAG0069,MR00776,AC050,2023-01-05,Technician,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0070,MR01422,AC003,2024-04-14,Technician,Minor erosion found on turbine blades.,Minor,Maintenance action completed and system rechecked.
+SNAG0071,MR00188,AC015,2024-07-24,Technician,Compressor stall indication during rapid power change.,Minor,Inspected component and recorded condition.
+SNAG0072,MR00262,AC076,2023-09-08,Technician,Fuel flow anomaly observed during engine run.,Critical,Inspected component and recorded condition.
+SNAG0073,MR01331,AC092,2025-09-22,Pilot,Eroded blade edges found during inspection.,Critical,Maintenance action completed and system rechecked.
+SNAG0074,MR00873,AC068,2024-12-13,Pilot,Fuel flow anomaly observed during engine run.,Minor,Maintenance action completed and system rechecked.
+SNAG0075,MR00025,AC068,2023-10-02,Technician,Turbine blade erosion requires attention.,Minor,Removed defective part and installed replacement.
+SNAG0076,MR00684,AC092,2025-10-18,Technician,"High temp indication during climb, recheck sensors.",Critical,Inspected component and recorded condition.
+SNAG0077,MR01252,AC039,2024-09-08,Technician,Low pressure indication requires inspection.,Minor,Inspected component and recorded condition.
+SNAG0078,MR00943,AC077,2023-04-16,Technician,Vibration trend increasing at operating RPM.,Major,Fault isolated and corrective repair completed.
+SNAG0079,MR00461,AC044,2025-01-16,Technician,Excess vibration reported during climb.,Critical,Inspected component and recorded condition.
+SNAG0080,MR01004,AC026,2024-12-19,Engineer,Engine vibration above limit during run-up.,Major,Inspected component and recorded condition.
+SNAG0081,MR00815,AC046,2024-08-09,Technician,Low pressure indication requires inspection.,Minor,Inspected component and recorded condition.
+SNAG0082,MR00663,AC012,2024-01-15,Pilot,"Vibration noted at high RPM, needs inspection.",Minor,Functional test completed and readings verified.
+SNAG0083,MR00387,AC015,2024-01-30,Engineer,Unstable sensor signal requires replacement.,Minor,Inspected component and recorded condition.
+SNAG0084,MR01187,AC065,2023-06-09,Technician,Blade erosion visible during inspection.,Critical,Removed defective part and installed replacement.
+SNAG0085,MR01166,AC019,2025-08-02,Technician,"Vib level above normal, monitor after inspection.",Major,Inspected component and recorded condition.
+SNAG0086,MR00529,AC052,2024-03-20,Technician,Intermittent indication traced to sensor.,Major,Functional test completed and readings verified.
+SNAG0087,MR01483,AC085,2025-05-02,Engineer,Fuel flow trend outside normal range.,Major,Maintenance action completed and system rechecked.
+SNAG0088,MR00201,AC030,2023-11-01,Technician,Brief compressor stall reported during climb.,Major,Inspected component and recorded condition.
+SNAG0089,MR01378,AC100,2023-10-04,Pilot,Sensor output outside expected range.,Major,Inspected component and recorded condition.
+SNAG0090,MR00902,AC084,2024-02-18,Technician,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0091,MR01075,AC067,2026-02-18,Technician,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0092,MR01394,AC020,2024-07-18,Technician,Compressor disturbance noted during acceleration.,Minor,Inspected component and recorded condition.
+SNAG0093,MR00030,AC045,2026-03-29,Technician,"EGT trending high on climb, recheck after wash.",Minor,Maintenance action completed and system rechecked.
+SNAG0094,MR00061,AC022,2025-05-15,Technician,"Pressure drop observed, no visible leakage found.",Minor,Removed defective part and installed replacement.
+SNAG0095,MR00150,AC056,2023-03-14,Technician,"EGT trend increasing during power setting, inspect.",Major,Maintenance action completed and system rechecked.
+SNAG0096,MR01235,AC075,2023-04-13,Technician,Low pressure indication requires inspection.,Minor,Removed defective part and installed replacement.
+SNAG0097,MR00110,AC051,2023-05-19,Technician,Vibration trend increasing at operating RPM.,Minor,Maintenance action completed and system rechecked.
+SNAG0098,MR00119,AC016,2024-11-17,Pilot,Fuel consumption higher than expected.,Major,Inspected component and recorded condition.
+SNAG0099,MR01368,AC049,2023-11-28,Technician,Fuel consumption higher than expected.,Minor,Maintenance action completed and system rechecked.
+SNAG0100,MR00821,AC014,2024-08-09,Technician,"Pressure drop observed, no visible leakage found.",Minor,Inspected component and recorded condition.
+SNAG0101,MR00812,AC025,2025-07-14,Technician,"High temp indication during climb, recheck sensors.",Major,Inspected component and recorded condition.
+SNAG0102,MR00487,AC032,2024-07-16,Engineer,Oil pressure below normal at higher power.,Minor,Removed defective part and installed replacement.
+SNAG0103,MR00069,AC073,2023-08-30,Technician,"Stall event during power transition, inspect compressor.",Minor,Inspected component and recorded condition.
+SNAG0104,MR00112,AC078,2026-04-08,Technician,Engine vibration increased during power change.,Critical,Inspected component and recorded condition.
+SNAG0105,MR00111,AC002,2023-01-25,Engineer,Abnormal bearing noise during ground run.,Minor,Removed defective part and installed replacement.
+SNAG0106,MR01430,AC005,2025-07-18,Pilot,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0107,MR00257,AC034,2025-03-21,Technician,Engine experienced surge-like event at high power.,Minor,Removed defective part and installed replacement.
+SNAG0108,MR01091,AC090,2023-08-20,Technician,EGT above normal trend during power increase.,Critical,Maintenance action completed and system rechecked.
+SNAG0109,MR01310,AC077,2025-04-24,Technician,Unstable sensor signal requires replacement.,Minor,Inspected component and recorded condition.
+SNAG0110,MR01272,AC043,2023-01-14,Engineer,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Inspected component and recorded condition.
+SNAG0111,MR00083,AC100,2025-08-14,Pilot,Bearing condition showing increased wear.,Minor,Removed defective part and installed replacement.
+SNAG0112,MR00131,AC075,2024-01-10,Technician,"High temp indication during climb, recheck sensors.",Major,Inspected component and recorded condition.
+SNAG0113,MR01010,AC077,2026-05-26,Pilot,Oil pressure fluctuating during operation.,Major,Maintenance action completed and system rechecked.
+SNAG0114,MR00570,AC040,2024-05-31,Engineer,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Maintenance action completed and system rechecked.
+SNAG0115,MR00172,AC026,2023-11-24,Engineer,Bearing wear noted during inspection.,Minor,Removed defective part and installed replacement.
+SNAG0116,MR01356,AC027,2025-09-02,Technician,Fuel flow higher than expected at cruise power.,Minor,Inspected component and recorded condition.
+SNAG0117,MR01158,AC020,2024-04-02,Technician,"High temp indication during climb, recheck sensors.",Critical,Maintenance action completed and system rechecked.
+SNAG0118,MR00163,AC025,2025-06-11,Technician,Engine sensor fault observed during test.,Minor,Inspected component and recorded condition.
+SNAG0119,MR00159,AC017,2024-12-19,Technician,Brief compressor stall reported during climb.,Minor,Maintenance action completed and system rechecked.
+SNAG0120,MR00118,AC068,2023-03-02,Engineer,Low oil pressure indication reported in flight.,Minor,Inspected component and recorded condition.
+SNAG0121,MR00991,AC003,2025-04-19,Pilot,Bearing condition below expected standard.,Minor,Maintenance action completed and system rechecked.
+SNAG0122,MR00070,AC071,2025-10-26,Technician,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0123,MR01106,AC009,2025-07-22,Technician,Engine vibration increased during power change.,Minor,Inspected component and recorded condition.
+SNAG0124,MR01283,AC015,2023-06-25,Pilot,Fuel flow fluctuating during power changes.,Major,Inspected component and recorded condition.
+SNAG0125,MR01333,AC050,2024-01-30,Pilot,Abnormal vibration noted by crew during flight.,Major,Inspected component and recorded condition.
+SNAG0126,MR00988,AC059,2025-01-24,Technician,Oil pressure below normal at higher power.,Major,Inspected component and recorded condition.
+SNAG0127,MR00970,AC072,2025-01-03,Pilot,"Vib level above normal, monitor after inspection.",Minor,Removed defective part and installed replacement.
+SNAG0128,MR00910,AC074,2025-02-21,Pilot,Fuel flow indication intermittent.,Minor,Removed defective part and installed replacement.
+SNAG0129,MR00819,AC032,2025-07-10,Technician,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0130,MR01469,AC026,2025-10-02,Pilot,"EGT rise observed at high power, requires follow-up.",Minor,Inspected component and recorded condition.
+SNAG0131,MR00015,AC051,2024-12-16,Technician,Pressure lower than expected after power increase.,Minor,Inspected component and recorded condition.
+SNAG0132,MR01498,AC007,2023-11-16,Technician,Excess vibration reported during climb.,Minor,Inspected component and recorded condition.
+SNAG0133,MR00880,AC043,2026-02-10,Engineer,"Oil pressure dropped during climb, monitor closely.",Major,Maintenance action completed and system rechecked.
+SNAG0134,MR01239,AC046,2023-06-02,Technician,Fuel flow trend outside normal range.,Major,Maintenance action completed and system rechecked.
+SNAG0135,MR00554,AC061,2024-07-07,Technician,Blade surface wear higher than expected.,Major,Inspected component and recorded condition.
+SNAG0136,MR00203,AC041,2024-12-13,Technician,Fuel flow unstable during climb.,Minor,Inspected component and recorded condition.
+SNAG0137,MR01378,AC100,2023-10-04,Technician,Intermittent indication traced to sensor.,Minor,Inspected component and recorded condition.
+SNAG0138,MR00305,AC043,2022-10-24,Technician,Abnormal bearing noise during ground run.,Minor,Inspected component and recorded condition.
+SNAG0139,MR00398,AC068,2025-07-14,Pilot,"Vib level above normal, monitor after inspection.",Minor,Maintenance action completed and system rechecked.
+SNAG0140,MR01324,AC082,2025-09-14,Technician,"EGT rise observed at high power, requires follow-up.",Minor,Inspected component and recorded condition.
+SNAG0141,MR00819,AC032,2025-07-10,Technician,"EGT trend increasing during power setting, inspect.",Major,Inspected component and recorded condition.
+SNAG0142,MR00828,AC049,2024-07-17,Technician,Blade surface wear higher than expected.,Minor,Removed defective part and installed replacement.
+SNAG0143,MR00100,AC026,2024-05-29,Engineer,Blade surface wear higher than expected.,Major,Inspected component and recorded condition.
+SNAG0144,MR00614,AC055,2024-10-21,Engineer,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Inspected component and recorded condition.
+SNAG0145,MR00892,AC051,2023-07-04,Pilot,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0146,MR01449,AC026,2023-12-04,Engineer,Blade leading edge showing erosion.,Minor,Inspected component and recorded condition.
+SNAG0147,MR00034,AC015,2025-02-03,Pilot,Erosion observed on several blades.,Major,Inspected component and recorded condition.
+SNAG0148,MR01258,AC070,2024-04-09,Technician,Unstable sensor signal requires replacement.,Minor,Inspected component and recorded condition.
+SNAG0149,MR00959,AC057,2022-07-13,Technician,"High temp indication during climb, recheck sensors.",Major,Inspected component and recorded condition.
+SNAG0150,MR00379,AC100,2023-09-08,Technician,"Climb EGT running higher than expected, inspect engine.",Critical,Inspected component and recorded condition.
+SNAG0151,MR00471,AC055,2024-04-06,Technician,Fuel flow unstable during climb.,Minor,Inspected component and recorded condition.
+SNAG0152,MR00024,AC047,2023-11-06,Technician,Vibration trend increasing at operating RPM.,Minor,Inspected component and recorded condition.
+SNAG0153,MR00767,AC083,2025-02-21,Engineer,Vibration trend increasing at operating RPM.,Minor,Inspected component and recorded condition.
+SNAG0154,MR00129,AC039,2024-02-06,Technician,Sensor output outside expected range.,Minor,Inspected component and recorded condition.
+SNAG0155,MR00338,AC068,2023-09-27,Pilot,Vibration trend increasing at operating RPM.,Major,Inspected component and recorded condition.
+SNAG0156,MR01036,AC007,2023-07-08,Pilot,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0157,MR01241,AC032,2023-12-03,Technician,Fuel consumption higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0158,MR00772,AC094,2023-04-09,Technician,"Vibration noted at high RPM, needs inspection.",Minor,Inspected component and recorded condition.
+SNAG0159,MR00159,AC017,2024-12-19,Technician,Brief compressor stall reported during climb.,Critical,Maintenance action completed and system rechecked.
+SNAG0160,MR01326,AC047,2024-07-17,Technician,EGT above normal trend during power increase.,Major,Inspected component and recorded condition.
+SNAG0161,MR00252,AC080,2023-10-05,Technician,"Vibration noted at high RPM, needs inspection.",Major,Maintenance action completed and system rechecked.
+SNAG0162,MR00973,AC036,2025-02-09,Technician,"Stall event during power transition, inspect compressor.",Major,Inspected component and recorded condition.
+SNAG0163,MR01359,AC072,2025-02-10,Pilot,Bearing wear noted during inspection.,Major,Inspected component and recorded condition.
+SNAG0164,MR00565,AC035,2022-08-14,Technician,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0165,MR01179,AC079,2023-08-04,Engineer,Fuel consumption higher than expected.,Minor,Maintenance action completed and system rechecked.
+SNAG0166,MR00345,AC083,2025-06-19,Pilot,"High vibration observed, possible rotating imbalance.",Major,Removed defective part and installed replacement.
+SNAG0167,MR00446,AC076,2024-08-05,Pilot,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0168,MR00597,AC039,2026-08-27,Pilot,Compressor disturbance noted during acceleration.,Minor,Inspected component and recorded condition.
+SNAG0169,MR00395,AC043,2025-12-20,Engineer,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0170,MR00824,AC039,2022-12-28,Technician,Vibration trend increasing at operating RPM.,Critical,Maintenance action completed and system rechecked.
+SNAG0171,MR00771,AC067,2023-12-13,Engineer,Erosion observed on several blades.,Major,Inspected component and recorded condition.
+SNAG0172,MR00651,AC043,2022-11-14,Engineer,Momentary stall reported by pilot during climb.,Minor,Inspected component and recorded condition.
+SNAG0173,MR01302,AC051,2023-07-11,Technician,"High vibration observed, possible rotating imbalance.",Minor,Inspected component and recorded condition.
+SNAG0174,MR00070,AC071,2025-10-26,Technician,Engine vibration above limit during run-up.,Major,Inspected component and recorded condition.
+SNAG0175,MR01220,AC090,2022-12-11,Pilot,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Maintenance action completed and system rechecked.
+SNAG0176,MR00871,AC088,2026-08-16,Pilot,"Oil pressure dropped during climb, monitor closely.",Minor,Inspected component and recorded condition.
+SNAG0177,MR01030,AC090,2024-09-06,Technician,"Pressure drop observed, no visible leakage found.",Critical,Removed defective part and installed replacement.
+SNAG0178,MR00748,AC100,2025-09-23,Engineer,Engine oil pressure trending down.,Critical,Inspected component and recorded condition.
+SNAG0179,MR00526,AC083,2024-04-12,Technician,Engine oil pressure trending down.,Minor,Inspected component and recorded condition.
+SNAG0180,MR00944,AC014,2025-01-15,Technician,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0181,MR00928,AC083,2023-06-11,Pilot,"High temp indication during climb, recheck sensors.",Minor,Maintenance action completed and system rechecked.
+SNAG0182,MR00946,AC092,2025-04-06,Pilot,Oil pressure below normal at higher power.,Minor,Inspected component and recorded condition.
+SNAG0183,MR01114,AC092,2023-12-30,Pilot,Fuel flow unstable during climb.,Critical,Maintenance action completed and system rechecked.
+SNAG0184,MR00463,AC086,2025-12-30,Technician,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0185,MR00480,AC042,2025-02-13,Pilot,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0186,MR00114,AC042,2024-10-11,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0187,MR00974,AC062,2024-07-08,Technician,"Short stall event observed, requires inspection.",Minor,Inspected component and recorded condition.
+SNAG0188,MR00679,AC084,2025-03-23,Pilot,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0189,MR01404,AC091,2023-09-23,Technician,"Pressure drop observed, no visible leakage found.",Minor,Maintenance action completed and system rechecked.
+SNAG0190,MR00628,AC045,2024-07-24,Technician,Engine experienced surge-like event at high power.,Major,Inspected component and recorded condition.
+SNAG0191,MR01037,AC099,2025-09-07,Technician,"EGT rise observed at high power, requires follow-up.",Major,Inspected component and recorded condition.
+SNAG0192,MR00175,AC094,2024-11-21,Technician,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0193,MR00747,AC043,2023-03-08,Technician,"High vibration observed, possible rotating imbalance.",Major,Functional test completed and readings verified.
+SNAG0194,MR00891,AC021,2024-12-31,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Critical,Maintenance action completed and system rechecked.
+SNAG0195,MR00928,AC083,2023-06-11,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Minor,Maintenance action completed and system rechecked.
+SNAG0196,MR01173,AC083,2024-10-23,Technician,Turbine blade erosion requires attention.,Major,Removed defective part and installed replacement.
+SNAG0197,MR00880,AC043,2026-02-10,Pilot,Pressure lower than expected after power increase.,Minor,Maintenance action completed and system rechecked.
+SNAG0198,MR00879,AC043,2024-08-12,Technician,"EGT rise observed at high power, requires follow-up.",Major,Inspected component and recorded condition.
+SNAG0199,MR00925,AC092,2022-12-13,Engineer,"EGT rise observed at high power, requires follow-up.",Major,Inspected component and recorded condition.
+SNAG0200,MR00083,AC100,2025-08-14,Technician,Bearing wear noted during inspection.,Minor,Removed defective part and installed replacement.
+SNAG0201,MR00218,AC083,2024-08-29,Engineer,Oil pressure below normal at higher power.,Minor,Maintenance action completed and system rechecked.
+SNAG0202,MR00205,AC077,2023-12-16,Pilot,Compressor stall indication during rapid power change.,Minor,Inspected component and recorded condition.
+SNAG0203,MR00599,AC028,2025-11-17,Technician,"Vibration noted at high RPM, needs inspection.",Minor,Maintenance action completed and system rechecked.
+SNAG0204,MR00129,AC039,2024-02-06,Technician,Unstable sensor signal requires replacement.,Major,Inspected component and recorded condition.
+SNAG0205,MR00850,AC085,2024-12-25,Technician,Fuel consumption higher than expected.,Minor,Removed defective part and installed replacement.
+SNAG0206,MR01489,AC092,2025-09-05,Pilot,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0207,MR00207,AC092,2025-09-16,Technician,Fuel flow anomaly observed during engine run.,Minor,Maintenance action completed and system rechecked.
+SNAG0208,MR00205,AC077,2023-12-16,Technician,Engine experienced surge-like event at high power.,Minor,Inspected component and recorded condition.
+SNAG0209,MR01070,AC060,2025-02-20,Engineer,Low oil pressure indication reported in flight.,Minor,Inspected component and recorded condition.
+SNAG0210,MR00262,AC076,2023-09-08,Technician,Fuel consumption higher than expected.,Major,Inspected component and recorded condition.
+SNAG0211,MR00290,AC044,2024-07-31,Technician,Unstable sensor signal requires replacement.,Major,Inspected component and recorded condition.
+SNAG0212,MR00386,AC007,2026-01-17,Technician,Turbine blade erosion requires attention.,Major,Inspected component and recorded condition.
+SNAG0213,MR00268,AC001,2022-09-09,Technician,"EGT rise observed at high power, requires follow-up.",Minor,Removed defective part and installed replacement.
+SNAG0214,MR00619,AC042,2026-01-27,Pilot,Sensor signal intermittent during engine run.,Minor,Removed defective part and installed replacement.
+SNAG0215,MR01279,AC017,2024-01-06,Technician,Vibration trend increasing at operating RPM.,Minor,Functional test completed and readings verified.
+SNAG0216,MR00472,AC054,2024-08-26,Pilot,Compressor disturbance noted during acceleration.,Major,Functional test completed and readings verified.
+SNAG0217,MR00928,AC083,2023-06-11,Technician,"EGT trending high on climb, recheck after wash.",Critical,Maintenance action completed and system rechecked.
+SNAG0218,MR01209,AC025,2026-04-02,Engineer,Fuel flow fluctuating during power changes.,Minor,Maintenance action completed and system rechecked.
+SNAG0219,MR00235,AC093,2025-09-01,Technician,"Pressure drop observed, no visible leakage found.",Major,Inspected component and recorded condition.
+SNAG0220,MR01451,AC077,2025-04-24,Technician,Engine experienced surge-like event at high power.,Minor,Inspected component and recorded condition.
+SNAG0221,MR01235,AC075,2023-04-13,Technician,Engine oil pressure trending down.,Major,Removed defective part and installed replacement.
+SNAG0222,MR00815,AC046,2024-08-09,Pilot,Pressure lower than expected after power increase.,Minor,Inspected component and recorded condition.
+SNAG0223,MR00541,AC095,2024-01-14,Technician,"Short stall event observed, requires inspection.",Critical,Maintenance action completed and system rechecked.
+SNAG0224,MR00495,AC018,2024-07-09,Engineer,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0225,MR00294,AC053,2025-03-10,Pilot,Oil pressure fluctuating during operation.,Minor,Maintenance action completed and system rechecked.
+SNAG0226,MR00184,AC098,2023-01-17,Pilot,Low pressure indication requires inspection.,Minor,Inspected component and recorded condition.
+SNAG0227,MR00872,AC015,2024-03-06,Pilot,"Oil pressure dropped during climb, monitor closely.",Minor,Inspected component and recorded condition.
+SNAG0228,MR01040,AC081,2023-06-11,Pilot,Minor erosion found on turbine blades.,Minor,Inspected component and recorded condition.
+SNAG0229,MR00726,AC008,2025-11-17,Technician,EGT above normal trend during power increase.,Critical,Inspected component and recorded condition.
+SNAG0230,MR01339,AC026,2024-11-11,Technician,Erosion observed on several blades.,Critical,Inspected component and recorded condition.
+SNAG0231,MR00828,AC049,2024-07-17,Pilot,Eroded blade edges found during inspection.,Major,Removed defective part and installed replacement.
+SNAG0232,MR00250,AC020,2024-06-27,Technician,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.
+SNAG0233,MR00675,AC020,2023-05-18,Technician,Sensor signal intermittent during engine run.,Minor,Maintenance action completed and system rechecked.
+SNAG0234,MR01067,AC056,2024-03-28,Pilot,"Climb EGT running higher than expected, inspect engine.",Minor,Inspected component and recorded condition.
+SNAG0235,MR00924,AC014,2026-05-20,Pilot,Engine experienced surge-like event at high power.,Minor,Inspected component and recorded condition.
+SNAG0236,MR00763,AC063,2026-01-27,Pilot,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0237,MR00901,AC047,2025-02-27,Engineer,Engine oil pressure trending down.,Minor,Inspected component and recorded condition.
+SNAG0238,MR00521,AC010,2024-05-17,Technician,Abnormal vibration noted by crew during flight.,Major,Inspected component and recorded condition.
+SNAG0239,MR00441,AC040,2026-02-19,Technician,Wear marks observed around bearing assembly.,Minor,Inspected component and recorded condition.
+SNAG0240,MR00990,AC081,2025-05-23,Technician,"Vib level above normal, monitor after inspection.",Critical,Maintenance action completed and system rechecked.
+SNAG0241,MR00133,AC077,2025-01-01,Technician,Momentary stall reported by pilot during climb.,Major,Inspected component and recorded condition.
+SNAG0242,MR00685,AC014,2024-05-29,Technician,Oil pressure below normal at higher power.,Minor,Maintenance action completed and system rechecked.
+SNAG0243,MR01122,AC088,2025-07-12,Pilot,"EGT trending high on climb, recheck after wash.",Critical,Maintenance action completed and system rechecked.
+SNAG0244,MR00624,AC031,2023-12-02,Technician,Bearing condition showing increased wear.,Minor,Inspected component and recorded condition.
+SNAG0245,MR01386,AC090,2025-01-29,Pilot,"Climb EGT running higher than expected, inspect engine.",Major,Maintenance action completed and system rechecked.
+SNAG0246,MR01176,AC043,2024-06-11,Technician,Compressor blade erosion noted.,Minor,Inspected component and recorded condition.
+SNAG0247,MR01368,AC049,2023-11-28,Technician,Fuel flow unstable during climb.,Minor,Maintenance action completed and system rechecked.
+SNAG0248,MR00334,AC060,2025-05-22,Pilot,Unstable sensor signal requires replacement.,Major,Inspected component and recorded condition.
+SNAG0249,MR01053,AC026,2025-01-05,Engineer,Fuel flow indication intermittent.,Major,Maintenance action completed and system rechecked.
+SNAG0250,MR00582,AC090,2024-05-23,Technician,Fuel flow indication intermittent.,Major,Inspected component and recorded condition.
+SNAG0251,MR00506,AC010,2025-09-23,Pilot,"Short stall event observed, requires inspection.",Minor,Inspected component and recorded condition.
+SNAG0252,MR00263,AC078,2023-06-15,Engineer,"EGT trending high on climb, recheck after wash.",Major,Inspected component and recorded condition.
+SNAG0253,MR00471,AC055,2024-04-06,Technician,Fuel flow trend outside normal range.,Minor,Inspected component and recorded condition.
+SNAG0254,MR00801,AC032,2024-02-18,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Major,Maintenance action completed and system rechecked.
+SNAG0255,MR00047,AC059,2025-01-11,Technician,Compressor disturbance noted during acceleration.,Major,Inspected component and recorded condition.
+SNAG0256,MR00813,AC037,2024-12-14,Technician,Oil pressure below normal at higher power.,Major,Maintenance action completed and system rechecked.
+SNAG0257,MR00061,AC022,2025-05-15,Pilot,"Oil pressure dropped during climb, monitor closely.",Major,Removed defective part and installed replacement.
+SNAG0258,MR01446,AC055,2024-12-12,Engineer,Fuel flow fluctuating during power changes.,Major,Inspected component and recorded condition.
+SNAG0259,MR00978,AC042,2025-12-17,Engineer,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0260,MR01148,AC032,2022-12-03,Technician,Compressor stall felt during rapid throttle increase.,Major,Inspected component and recorded condition.
+SNAG0261,MR00139,AC010,2026-04-04,Engineer,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.
+SNAG0262,MR01450,AC095,2023-12-25,Technician,Compressor disturbance noted during acceleration.,Minor,Inspected component and recorded condition.
+SNAG0263,MR00984,AC087,2024-12-16,Engineer,"Pressure drop observed, no visible leakage found.",Major,Inspected component and recorded condition.
+SNAG0264,MR00455,AC019,2024-06-09,Technician,Compressor blade erosion noted.,Minor,Removed defective part and installed replacement.
+SNAG0265,MR00521,AC010,2024-05-17,Pilot,"High vibration observed, possible rotating imbalance.",Major,Inspected component and recorded condition.
+SNAG0266,MR01081,AC023,2022-06-18,Pilot,Fuel flow unstable during climb.,Minor,Inspected component and recorded condition.
+SNAG0267,MR00900,AC042,2024-04-01,Technician,Fuel consumption higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0268,MR01075,AC067,2026-02-18,Technician,"Climb EGT running higher than expected, inspect engine.",Minor,Inspected component and recorded condition.
+SNAG0269,MR00888,AC056,2023-11-16,Technician,"EGT rise observed at high power, requires follow-up.",Major,Inspected component and recorded condition.
+SNAG0270,MR00268,AC001,2022-09-09,Technician,"Climb EGT running higher than expected, inspect engine.",Minor,Removed defective part and installed replacement.
+SNAG0271,MR01458,AC057,2025-03-18,Technician,Low pressure indication requires inspection.,Major,Inspected component and recorded condition.
+SNAG0272,MR00919,AC088,2023-01-11,Technician,Blade leading edge showing erosion.,Minor,Inspected component and recorded condition.
+SNAG0273,MR00195,AC018,2025-07-01,Technician,Excess vibration reported during climb.,Minor,Functional test completed and readings verified.
+SNAG0274,MR00363,AC029,2025-07-14,Pilot,Low pressure indication requires inspection.,Critical,Maintenance action completed and system rechecked.
+SNAG0275,MR01205,AC072,2025-05-10,Technician,Engine vibration increased during power change.,Minor,Maintenance action completed and system rechecked.
+SNAG0276,MR01179,AC079,2023-08-04,Technician,Fuel flow trend outside normal range.,Minor,Maintenance action completed and system rechecked.
+SNAG0277,MR00489,AC067,2024-02-20,Pilot,Engine vibration above limit during run-up.,Minor,Inspected component and recorded condition.
+SNAG0278,MR00428,AC001,2024-12-10,Technician,Excess vibration reported during climb.,Major,Maintenance action completed and system rechecked.
+SNAG0279,MR00218,AC083,2024-08-29,Technician,"Oil pressure dropped during climb, monitor closely.",Critical,Maintenance action completed and system rechecked.
+SNAG0280,MR01154,AC076,2026-08-24,Technician,Bearing wear suspected from vibration trend.,Major,Removed defective part and installed replacement.
+SNAG0281,MR00529,AC052,2024-03-20,Technician,Sensor indication dropped briefly in flight.,Minor,Functional test completed and readings verified.
+SNAG0282,MR00459,AC015,2025-06-13,Technician,Momentary stall reported by pilot during climb.,Major,Removed defective part and installed replacement.
+SNAG0283,MR01413,AC077,2025-04-26,Pilot,"Vibration noted at high RPM, needs inspection.",Major,Removed defective part and installed replacement.
+SNAG0284,MR00881,AC026,2025-03-17,Pilot,"EGT rise observed at high power, requires follow-up.",Critical,Maintenance action completed and system rechecked.
+SNAG0285,MR00522,AC011,2023-05-13,Engineer,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0286,MR00634,AC004,2024-09-01,Engineer,"EGT rise observed at high power, requires follow-up.",Major,Inspected component and recorded condition.
+SNAG0287,MR01061,AC077,2024-09-07,Technician,Oil pressure below normal at higher power.,Critical,Maintenance action completed and system rechecked.
+SNAG0288,MR00114,AC042,2024-10-11,Technician,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0289,MR00248,AC040,2023-11-11,Engineer,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0290,MR00604,AC095,2025-02-18,Technician,Low oil pressure indication reported in flight.,Critical,Maintenance action completed and system rechecked.
+SNAG0291,MR01224,AC095,2025-03-26,Technician,"Vibration noted at high RPM, needs inspection.",Minor,Inspected component and recorded condition.
+SNAG0292,MR00426,AC007,2024-11-24,Technician,Brief compressor stall reported during climb.,Critical,Inspected component and recorded condition.
+SNAG0293,MR00195,AC018,2025-07-01,Pilot,Engine vibration increased during power change.,Major,Functional test completed and readings verified.
+SNAG0294,MR00198,AC083,2024-02-17,Technician,Blade leading edge showing erosion.,Minor,Inspected component and recorded condition.
+SNAG0295,MR01408,AC077,2023-11-28,Engineer,"Climb EGT running higher than expected, inspect engine.",Major,Inspected component and recorded condition.
+SNAG0296,MR01031,AC033,2024-03-28,Pilot,"High vibration observed, possible rotating imbalance.",Minor,Maintenance action completed and system rechecked.
+SNAG0297,MR00748,AC100,2025-09-23,Pilot,Low pressure indication requires inspection.,Minor,Inspected component and recorded condition.
+SNAG0298,MR01498,AC007,2023-11-16,Engineer,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0299,MR00178,AC011,2023-06-14,Technician,Pressure lower than expected after power increase.,Major,Maintenance action completed and system rechecked.
+SNAG0300,MR01384,AC059,2023-07-27,Pilot,Engine oil pressure trending down.,Minor,Maintenance action completed and system rechecked.
+SNAG0301,MR01026,AC056,2023-01-18,Pilot,Intermittent indication traced to sensor.,Minor,Removed defective part and installed replacement.
+SNAG0302,MR00061,AC022,2025-05-15,Technician,Low oil pressure indication reported in flight.,Major,Removed defective part and installed replacement.
+SNAG0303,MR00329,AC053,2022-08-24,Technician,Fuel flow fluctuating during power changes.,Minor,Inspected component and recorded condition.
+SNAG0304,MR01424,AC079,2024-08-14,Technician,"High temp indication during climb, recheck sensors.",Minor,Maintenance action completed and system rechecked.
+SNAG0305,MR01116,AC060,2025-12-11,Technician,Excess vibration reported during climb.,Critical,Maintenance action completed and system rechecked.
+SNAG0306,MR01461,AC012,2023-04-03,Engineer,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.
+SNAG0307,MR00627,AC051,2024-05-04,Technician,Unstable sensor signal requires replacement.,Minor,Inspected component and recorded condition.
+SNAG0308,MR00100,AC026,2024-05-29,Pilot,Minor erosion found on turbine blades.,Critical,Inspected component and recorded condition.
+SNAG0309,MR00949,AC086,2024-07-27,Technician,Compressor stall indication during rapid power change.,Minor,Inspected component and recorded condition.
+SNAG0310,MR00529,AC052,2024-03-20,Engineer,Sensor reading unstable at operating power.,Minor,Functional test completed and readings verified.
+SNAG0311,MR01190,AC093,2022-06-15,Pilot,Engine vibration increased during power change.,Minor,Inspected component and recorded condition.
+SNAG0312,MR00601,AC077,2025-06-02,Technician,Low oil pressure indication reported in flight.,Major,Inspected component and recorded condition.
+SNAG0313,MR01448,AC081,2024-11-07,Technician,Fuel flow higher than expected at cruise power.,Major,Inspected component and recorded condition.
+SNAG0314,MR01339,AC026,2024-11-11,Pilot,Blade erosion visible during inspection.,Critical,Inspected component and recorded condition.
+SNAG0315,MR00308,AC042,2025-11-21,Pilot,Bearing wear noted during inspection.,Major,Removed defective part and installed replacement.
+SNAG0316,MR00970,AC072,2025-01-03,Technician,"High vibration observed, possible rotating imbalance.",Minor,Removed defective part and installed replacement.
+SNAG0317,MR01431,AC044,2023-05-16,Technician,Low pressure indication requires inspection.,Minor,Inspected component and recorded condition.
+SNAG0318,MR00658,AC031,2022-12-27,Technician,Erosion observed on several blades.,Minor,Inspected component and recorded condition.
+SNAG0319,MR00334,AC060,2025-05-22,Technician,Sensor signal intermittent during engine run.,Major,Inspected component and recorded condition.
+SNAG0320,MR00296,AC031,2026-04-24,Technician,Unstable sensor signal requires replacement.,Minor,Removed defective part and installed replacement.
+SNAG0321,MR00225,AC092,2023-09-09,Technician,"Pressure drop observed, no visible leakage found.",Minor,Maintenance action completed and system rechecked.
+SNAG0322,MR00474,AC071,2024-03-24,Engineer,Fuel flow trend outside normal range.,Minor,Inspected component and recorded condition.
+SNAG0323,MR00839,AC047,2024-07-24,Pilot,Excess vibration reported during climb.,Major,Maintenance action completed and system rechecked.
+SNAG0324,MR01164,AC003,2024-11-09,Technician,Fuel flow indication intermittent.,Major,Inspected component and recorded condition.
+SNAG0325,MR00630,AC017,2024-12-08,Technician,"Pressure drop observed, no visible leakage found.",Major,Inspected component and recorded condition.
+SNAG0326,MR00701,AC091,2024-03-10,Technician,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0327,MR00566,AC039,2023-12-15,Pilot,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0328,MR00623,AC028,2024-11-02,Technician,Blade erosion visible during inspection.,Major,Inspected component and recorded condition.
+SNAG0329,MR00463,AC086,2025-12-30,Pilot,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0330,MR01350,AC003,2022-07-24,Technician,Fuel flow unstable during climb.,Minor,Maintenance action completed and system rechecked.
+SNAG0331,MR00255,AC017,2024-09-12,Pilot,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Inspected component and recorded condition.
+SNAG0332,MR00949,AC086,2024-07-27,Technician,Engine experienced surge-like event at high power.,Minor,Inspected component and recorded condition.
+SNAG0333,MR00303,AC051,2023-12-09,Engineer,Abnormal fuel flow indication noted in flight.,Major,Maintenance action completed and system rechecked.
+SNAG0334,MR00790,AC020,2023-10-12,Pilot,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0335,MR00150,AC056,2023-03-14,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Maintenance action completed and system rechecked.
+SNAG0336,MR00349,AC061,2023-08-13,Technician,"Vib level above normal, monitor after inspection.",Minor,Maintenance action completed and system rechecked.
+SNAG0337,MR00363,AC029,2025-07-14,Technician,Oil pressure fluctuating during operation.,Critical,Maintenance action completed and system rechecked.
+SNAG0338,MR00160,AC068,2023-08-18,Technician,Fuel flow fluctuating during power changes.,Minor,Inspected component and recorded condition.
+SNAG0339,MR00529,AC052,2024-03-20,Engineer,Faulty sensor indication reported by crew.,Minor,Functional test completed and readings verified.
+SNAG0340,MR00774,AC043,2024-05-26,Pilot,EGT above normal trend during power increase.,Major,Inspected component and recorded condition.
+SNAG0341,MR00797,AC037,2024-05-16,Pilot,"High vibration observed, possible rotating imbalance.",Minor,Inspected component and recorded condition.
+SNAG0342,MR00528,AC081,2024-06-21,Technician,"EGT trend increasing during power setting, inspect.",Minor,Maintenance action completed and system rechecked.
+SNAG0343,MR00404,AC074,2025-06-23,Technician,Pressure lower than expected after power increase.,Minor,Maintenance action completed and system rechecked.
+SNAG0344,MR01385,AC002,2024-02-28,Engineer,Low pressure indication requires inspection.,Critical,Maintenance action completed and system rechecked.
+SNAG0345,MR01466,AC080,2024-01-01,Technician,Engine vibration above limit during run-up.,Major,Inspected component and recorded condition.
+SNAG0346,MR00844,AC082,2026-04-26,Technician,"EGT trend increasing during power setting, inspect.",Critical,Maintenance action completed and system rechecked.
+SNAG0347,MR01389,AC011,2024-06-03,Technician,"Vib level above normal, monitor after inspection.",Major,Functional test completed and readings verified.
+SNAG0348,MR00316,AC032,2023-05-26,Engineer,"Pressure drop observed, no visible leakage found.",Critical,Maintenance action completed and system rechecked.
+SNAG0349,MR01188,AC073,2025-02-23,Pilot,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0350,MR01472,AC092,2022-08-01,Pilot,Engine vibration above limit during run-up.,Minor,Maintenance action completed and system rechecked.
+SNAG0351,MR01057,AC033,2025-08-01,Pilot,"Pressure drop observed, no visible leakage found.",Major,Inspected component and recorded condition.
+SNAG0352,MR01498,AC007,2023-11-16,Technician,"Vib level above normal, monitor after inspection.",Critical,Inspected component and recorded condition.
+SNAG0353,MR01205,AC072,2025-05-10,Technician,Engine vibration above limit during run-up.,Major,Maintenance action completed and system rechecked.
+SNAG0354,MR00675,AC020,2023-05-18,Engineer,Sensor reading unstable at operating power.,Major,Maintenance action completed and system rechecked.
+SNAG0355,MR01386,AC090,2025-01-29,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Major,Maintenance action completed and system rechecked.
+SNAG0356,MR00072,AC032,2024-12-28,Engineer,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0357,MR01348,AC020,2024-11-14,Pilot,Engine vibration increased during power change.,Minor,Maintenance action completed and system rechecked.
+SNAG0358,MR00510,AC014,2022-04-26,Pilot,"Vib level above normal, monitor after inspection.",Minor,Maintenance action completed and system rechecked.
+SNAG0359,MR01345,AC040,2025-10-29,Pilot,Engine vibration above limit during run-up.,Minor,Inspected component and recorded condition.
+SNAG0360,MR01154,AC076,2026-08-24,Pilot,Bearing wear suspected from vibration trend.,Major,Removed defective part and installed replacement.
+SNAG0361,MR01020,AC044,2024-08-31,Technician,Oil pressure below normal at higher power.,Major,Inspected component and recorded condition.
+SNAG0362,MR00399,AC064,2025-03-31,Engineer,Momentary stall reported by pilot during climb.,Major,Removed defective part and installed replacement.
+SNAG0363,MR00357,AC077,2024-03-01,Technician,"Engine EGT slightly high on climb, no other abnormality.",Critical,Inspected component and recorded condition.
+SNAG0364,MR00233,AC014,2025-01-20,Pilot,Blade leading edge showing erosion.,Major,Inspected component and recorded condition.
+SNAG0365,MR00370,AC018,2025-05-23,Pilot,Compressor blade erosion noted.,Major,Inspected component and recorded condition.
+SNAG0366,MR00362,AC063,2025-10-08,Technician,Sensor indication dropped briefly in flight.,Minor,Inspected component and recorded condition.
+SNAG0367,MR01255,AC059,2025-01-08,Technician,"EGT trending high on climb, recheck after wash.",Major,Inspected component and recorded condition.
+SNAG0368,MR00920,AC079,2024-01-11,Engineer,Fuel flow indication intermittent.,Minor,Inspected component and recorded condition.
+SNAG0369,MR00549,AC084,2024-10-18,Pilot,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0370,MR00352,AC088,2025-03-02,Technician,Oil pressure below normal at higher power.,Major,Inspected component and recorded condition.
+SNAG0371,MR00567,AC009,2023-08-13,Engineer,Engine vibration increased during power change.,Critical,Maintenance action completed and system rechecked.
+SNAG0372,MR01199,AC002,2024-06-19,Pilot,Oil pressure fluctuating during operation.,Major,Inspected component and recorded condition.
+SNAG0373,MR01252,AC039,2024-09-08,Engineer,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.
+SNAG0374,MR00156,AC039,2025-03-20,Pilot,Oil pressure below normal at higher power.,Minor,Inspected component and recorded condition.
+SNAG0375,MR00352,AC088,2025-03-02,Technician,Low oil pressure indication reported in flight.,Minor,Inspected component and recorded condition.
+SNAG0376,MR00343,AC043,2026-08-21,Pilot,"Climb EGT running higher than expected, inspect engine.",Minor,Maintenance action completed and system rechecked.
+SNAG0377,MR00366,AC042,2024-08-18,Pilot,Excess vibration reported during climb.,Critical,Inspected component and recorded condition.
+SNAG0378,MR00291,AC087,2023-05-30,Technician,Bearing wear noted during inspection.,Minor,Inspected component and recorded condition.
+SNAG0379,MR00396,AC054,2024-06-27,Technician,Low pressure indication requires inspection.,Critical,Inspected component and recorded condition.
+SNAG0380,MR01043,AC061,2025-08-13,Engineer,Unstable sensor signal requires replacement.,Major,Inspected component and recorded condition.
+SNAG0381,MR00039,AC011,2023-12-29,Engineer,Excess vibration reported during climb.,Major,Maintenance action completed and system rechecked.
+SNAG0382,MR00346,AC032,2024-02-21,Technician,"Pressure drop observed, no visible leakage found.",Critical,Inspected component and recorded condition.
+SNAG0383,MR01489,AC092,2025-09-05,Engineer,Engine vibration above limit during run-up.,Minor,Inspected component and recorded condition.
+SNAG0384,MR00957,AC050,2024-12-31,Technician,Blade leading edge showing erosion.,Major,Inspected component and recorded condition.
+SNAG0385,MR00764,AC077,2023-02-24,Technician,Unstable sensor signal requires replacement.,Major,Inspected component and recorded condition.
+SNAG0386,MR00655,AC093,2022-12-13,Pilot,Eroded blade edges found during inspection.,Minor,Removed defective part and installed replacement.
+SNAG0387,MR00068,AC018,2024-01-16,Technician,"EGT trending high on climb, recheck after wash.",Minor,Removed defective part and installed replacement.
+SNAG0388,MR01024,AC080,2024-10-29,Pilot,EGT above normal trend during power increase.,Minor,Maintenance action completed and system rechecked.
+SNAG0389,MR01377,AC072,2025-07-26,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0390,MR01277,AC048,2025-01-21,Engineer,Fuel flow trend outside normal range.,Major,Inspected component and recorded condition.
+SNAG0391,MR00411,AC036,2024-09-25,Engineer,Compressor disturbance noted during acceleration.,Major,Inspected component and recorded condition.
+SNAG0392,MR00193,AC059,2024-05-05,Technician,Wear marks observed around bearing assembly.,Major,Inspected component and recorded condition.
+SNAG0393,MR00364,AC026,2025-11-01,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Major,Maintenance action completed and system rechecked.
+SNAG0394,MR00565,AC035,2022-08-14,Technician,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0395,MR00088,AC053,2023-10-22,Pilot,"EGT rise observed at high power, requires follow-up.",Minor,Inspected component and recorded condition.
+SNAG0396,MR00550,AC058,2023-08-12,Technician,Bearing wear noted during inspection.,Minor,Inspected component and recorded condition.
+SNAG0397,MR00475,AC003,2024-05-21,Engineer,Compressor disturbance noted during acceleration.,Minor,Inspected component and recorded condition.
+SNAG0398,MR00948,AC043,2026-08-04,Pilot,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0399,MR01219,AC002,2024-12-23,Technician,"Short stall event observed, requires inspection.",Major,Inspected component and recorded condition.
+SNAG0400,MR00507,AC021,2025-06-04,Engineer,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0401,MR01155,AC033,2024-10-24,Technician,"High vibration observed, possible rotating imbalance.",Major,Maintenance action completed and system rechecked.
+SNAG0402,MR00923,AC026,2024-08-05,Pilot,Minor erosion found on turbine blades.,Minor,Maintenance action completed and system rechecked.
+SNAG0403,MR00737,AC043,2024-02-09,Technician,"EGT rise observed at high power, requires follow-up.",Major,Fault isolated and corrective repair completed.
+SNAG0404,MR01135,AC062,2024-06-14,Technician,Sensor output outside expected range.,Major,Removed defective part and installed replacement.
+SNAG0405,MR00852,AC032,2022-04-23,Technician,"Pressure drop observed, no visible leakage found.",Minor,Removed defective part and installed replacement.
+SNAG0406,MR00358,AC077,2026-07-23,Technician,Compressor disturbance noted during acceleration.,Critical,Inspected component and recorded condition.
+SNAG0407,MR01162,AC076,2025-04-14,Technician,Eroded blade edges found during inspection.,Major,Removed defective part and installed replacement.
+SNAG0408,MR00709,AC091,2022-10-22,Technician,Engine vibration above limit during run-up.,Minor,Maintenance action completed and system rechecked.
+SNAG0409,MR00231,AC053,2024-08-08,Technician,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0410,MR00758,AC046,2023-08-07,Engineer,"Pressure drop observed, no visible leakage found.",Major,Maintenance action completed and system rechecked.
+SNAG0411,MR00396,AC054,2024-06-27,Engineer,Oil pressure below normal at higher power.,Minor,Inspected component and recorded condition.
+SNAG0412,MR00626,AC003,2026-05-07,Technician,Bearing vibration increasing over recent sorties.,Minor,Inspected component and recorded condition.
+SNAG0413,MR00982,AC039,2025-08-08,Technician,Blade surface wear higher than expected.,Major,Inspected component and recorded condition.
+SNAG0414,MR00413,AC081,2024-02-13,Technician,Pressure lower than expected after power increase.,Major,Inspected component and recorded condition.
+SNAG0415,MR00981,AC077,2025-01-08,Pilot,Compressor stall felt during rapid throttle increase.,Minor,Inspected component and recorded condition.
+SNAG0416,MR01305,AC010,2026-03-18,Technician,Abnormal bearing noise during ground run.,Major,Inspected component and recorded condition.
+SNAG0417,MR00450,AC021,2024-03-31,Technician,Turbine blade erosion requires attention.,Major,Inspected component and recorded condition.
+SNAG0418,MR00156,AC039,2025-03-20,Pilot,Low pressure indication requires inspection.,Minor,Inspected component and recorded condition.
+SNAG0419,MR01216,AC090,2023-06-08,Pilot,Blade erosion visible during inspection.,Minor,Inspected component and recorded condition.
+SNAG0420,MR00967,AC020,2025-02-27,Technician,"EGT trending high on climb, recheck after wash.",Major,Maintenance action completed and system rechecked.
+SNAG0421,MR00395,AC043,2025-12-20,Engineer,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0422,MR01009,AC053,2025-04-18,Pilot,Compressor disturbance noted during acceleration.,Major,Inspected component and recorded condition.
+SNAG0423,MR01006,AC075,2023-04-20,Technician,Abnormal fuel flow indication noted in flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0424,MR01470,AC065,2025-03-20,Technician,Blade erosion visible during inspection.,Minor,Inspected component and recorded condition.
+SNAG0425,MR00820,AC028,2026-05-02,Technician,Eroded blade edges found during inspection.,Critical,Inspected component and recorded condition.
+SNAG0426,MR00203,AC041,2024-12-13,Technician,Fuel flow trend outside normal range.,Major,Inspected component and recorded condition.
+SNAG0427,MR00399,AC064,2025-03-31,Engineer,Brief compressor stall reported during climb.,Critical,Removed defective part and installed replacement.
+SNAG0428,MR01182,AC019,2024-06-10,Pilot,Eroded blade edges found during inspection.,Major,Inspected component and recorded condition.
+SNAG0429,MR01235,AC075,2023-04-13,Pilot,Low pressure indication requires inspection.,Minor,Removed defective part and installed replacement.
+SNAG0430,MR00094,AC065,2025-11-19,Technician,Oil pressure fluctuating during operation.,Major,Maintenance action completed and system rechecked.
+SNAG0431,MR00584,AC001,2024-03-25,Technician,Fuel flow trend outside normal range.,Minor,Maintenance action completed and system rechecked.
+SNAG0432,MR00826,AC077,2023-02-19,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Inspected component and recorded condition.
+SNAG0433,MR01085,AC081,2025-01-05,Pilot,Vibration trend increasing at operating RPM.,Major,Inspected component and recorded condition.
+SNAG0434,MR01092,AC049,2025-12-03,Technician,Brief compressor stall reported during climb.,Minor,Inspected component and recorded condition.
+SNAG0435,MR01041,AC056,2022-11-11,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Major,Maintenance action completed and system rechecked.
+SNAG0436,MR00176,AC064,2025-03-29,Technician,"Vibration noted at high RPM, needs inspection.",Major,Inspected component and recorded condition.
+SNAG0437,MR01067,AC056,2024-03-28,Engineer,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0438,MR00353,AC090,2025-03-13,Pilot,Engine vibration above limit during run-up.,Minor,Inspected component and recorded condition.
+SNAG0439,MR00999,AC003,2025-08-30,Engineer,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0440,MR00301,AC055,2024-05-05,Engineer,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0441,MR00347,AC053,2022-09-09,Technician,Minor erosion found on turbine blades.,Minor,Inspected component and recorded condition.
+SNAG0442,MR01208,AC059,2025-09-25,Pilot,EGT above normal trend during power increase.,Minor,Removed defective part and installed replacement.
+SNAG0443,MR00700,AC043,2024-04-04,Pilot,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0444,MR00394,AC019,2025-05-11,Technician,"EGT trending high on climb, recheck after wash.",Minor,Maintenance action completed and system rechecked.
+SNAG0445,MR01011,AC025,2023-11-13,Engineer,Eroded blade edges found during inspection.,Major,Inspected component and recorded condition.
+SNAG0446,MR01213,AC042,2025-06-09,Technician,Low pressure indication requires inspection.,Major,Maintenance action completed and system rechecked.
+SNAG0447,MR00943,AC077,2023-04-16,Technician,"Vib level above normal, monitor after inspection.",Minor,Fault isolated and corrective repair completed.
+SNAG0448,MR01317,AC043,2024-04-09,Pilot,Fuel flow fluctuating during power changes.,Major,Inspected component and recorded condition.
+SNAG0449,MR01486,AC008,2025-07-14,Engineer,Fuel flow anomaly observed during engine run.,Major,Inspected component and recorded condition.
+SNAG0450,MR00194,AC053,2024-02-07,Pilot,Oil pressure fluctuating during operation.,Major,Maintenance action completed and system rechecked.
+SNAG0451,MR00299,AC075,2023-11-07,Technician,Compressor blade erosion noted.,Major,Maintenance action completed and system rechecked.
+SNAG0452,MR00582,AC090,2024-05-23,Technician,Fuel flow higher than expected at cruise power.,Minor,Inspected component and recorded condition.
+SNAG0453,MR01484,AC047,2022-07-31,Pilot,"EGT trend increasing during power setting, inspect.",Minor,Maintenance action completed and system rechecked.
+SNAG0454,MR01126,AC100,2026-03-05,Pilot,"EGT rise observed at high power, requires follow-up.",Major,Maintenance action completed and system rechecked.
+SNAG0455,MR01034,AC008,2025-03-10,Pilot,"Oil pressure dropped during climb, monitor closely.",Minor,Inspected component and recorded condition.
+SNAG0456,MR00079,AC051,2023-05-11,Technician,"EGT rise observed at high power, requires follow-up.",Minor,Maintenance action completed and system rechecked.
+SNAG0457,MR01409,AC077,2025-02-06,Pilot,Abnormal fuel flow indication noted in flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0458,MR00655,AC093,2022-12-13,Pilot,Blade surface wear higher than expected.,Major,Removed defective part and installed replacement.
+SNAG0459,MR00771,AC067,2023-12-13,Technician,Eroded blade edges found during inspection.,Major,Inspected component and recorded condition.
+SNAG0460,MR00299,AC075,2023-11-07,Technician,Blade leading edge showing erosion.,Major,Maintenance action completed and system rechecked.
+SNAG0461,MR00062,AC042,2025-03-20,Pilot,"High temp indication during climb, recheck sensors.",Major,Inspected component and recorded condition.
+SNAG0462,MR01156,AC033,2024-12-15,Engineer,"EGT rise observed at high power, requires follow-up.",Minor,Inspected component and recorded condition.
+SNAG0463,MR00402,AC051,2024-08-29,Technician,Oil pressure below normal at higher power.,Critical,Inspected component and recorded condition.
+SNAG0464,MR01120,AC076,2025-07-08,Engineer,Excess vibration reported during climb.,Minor,Maintenance action completed and system rechecked.
+SNAG0465,MR00181,AC077,2024-06-14,Pilot,Abnormal fuel flow indication noted in flight.,Minor,Inspected component and recorded condition.
+SNAG0466,MR00730,AC039,2023-06-07,Technician,Abnormal fuel flow indication noted in flight.,Minor,Removed defective part and installed replacement.
+SNAG0467,MR00063,AC032,2024-01-16,Pilot,"Vibration noted at high RPM, needs inspection.",Critical,Inspected component and recorded condition.
+SNAG0468,MR00590,AC083,2024-12-26,Technician,Fuel flow fluctuating during power changes.,Minor,Maintenance action completed and system rechecked.
+SNAG0469,MR01458,AC057,2025-03-18,Engineer,Low pressure indication requires inspection.,Major,Inspected component and recorded condition.
+SNAG0470,MR00087,AC086,2022-12-31,Technician,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0471,MR00437,AC081,2024-02-02,Technician,Momentary stall reported by pilot during climb.,Minor,Inspected component and recorded condition.
+SNAG0472,MR00559,AC044,2025-04-01,Engineer,Pressure lower than expected after power increase.,Major,Maintenance action completed and system rechecked.
+SNAG0473,MR00615,AC098,2025-04-27,Technician,"EGT trending high on climb, recheck after wash.",Major,Removed defective part and installed replacement.
+SNAG0474,MR00581,AC040,2023-04-04,Engineer,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0475,MR00708,AC051,2022-07-06,Technician,Excess vibration reported during climb.,Minor,Inspected component and recorded condition.
+SNAG0476,MR00858,AC055,2023-09-05,Technician,Oil pressure below normal at higher power.,Minor,Inspected component and recorded condition.
+SNAG0477,MR00495,AC018,2024-07-09,Engineer,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0478,MR00444,AC076,2022-11-29,Pilot,Turbine blade erosion requires attention.,Minor,Inspected component and recorded condition.
+SNAG0479,MR00787,AC011,2023-10-27,Technician,Oil pressure fluctuating during operation.,Minor,Removed defective part and installed replacement.
+SNAG0480,MR00143,AC097,2022-12-17,Pilot,Compressor stall indication during rapid power change.,Major,Inspected component and recorded condition.
+SNAG0481,MR00391,AC065,2023-09-07,Engineer,Engine oil pressure trending down.,Critical,Inspected component and recorded condition.
+SNAG0482,MR00446,AC076,2024-08-05,Technician,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0483,MR01492,AC044,2024-07-16,Technician,Excess vibration reported during climb.,Minor,Functional test completed and readings verified.
+SNAG0484,MR01044,AC086,2026-05-04,Technician,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0485,MR00844,AC082,2026-04-26,Engineer,"Engine EGT slightly high on climb, no other abnormality.",Minor,Maintenance action completed and system rechecked.
+SNAG0486,MR01249,AC075,2025-04-08,Technician,Erosion observed on several blades.,Major,Inspected component and recorded condition.
+SNAG0487,MR00132,AC074,2024-02-04,Pilot,Sensor indication dropped briefly in flight.,Major,Inspected component and recorded condition.
+SNAG0488,MR00578,AC066,2025-01-05,Pilot,"Stall event during power transition, inspect compressor.",Minor,Inspected component and recorded condition.
+SNAG0489,MR00064,AC007,2023-03-01,Engineer,Bearing condition below expected standard.,Minor,Inspected component and recorded condition.
+SNAG0490,MR01313,AC061,2022-11-18,Engineer,Engine vibration increased during power change.,Critical,Inspected component and recorded condition.
+SNAG0491,MR01355,AC067,2023-07-21,Technician,"Vibration noted at high RPM, needs inspection.",Critical,Inspected component and recorded condition.
+SNAG0492,MR00363,AC029,2025-07-14,Technician,Pressure lower than expected after power increase.,Minor,Maintenance action completed and system rechecked.
+SNAG0493,MR00762,AC081,2026-04-24,Pilot,Engine vibration increased during power change.,Minor,Functional test completed and readings verified.
+SNAG0494,MR00282,AC059,2023-02-02,Technician,Fuel flow anomaly observed during engine run.,Minor,Inspected component and recorded condition.
+SNAG0495,MR00048,AC017,2023-06-27,Technician,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0496,MR00406,AC032,2022-12-26,Technician,Abnormal fuel flow indication noted in flight.,Major,Functional test completed and readings verified.
+SNAG0497,MR01343,AC028,2024-03-17,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Maintenance action completed and system rechecked.
+SNAG0498,MR00992,AC022,2025-10-18,Technician,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0499,MR00813,AC037,2024-12-14,Engineer,Oil pressure fluctuating during operation.,Minor,Maintenance action completed and system rechecked.
+SNAG0500,MR01023,AC087,2023-09-30,Technician,Compressor stall felt during rapid throttle increase.,Major,Inspected component and recorded condition.
+SNAG0501,MR00940,AC084,2024-07-16,Engineer,Fuel flow anomaly observed during engine run.,Minor,Inspected component and recorded condition.
+SNAG0502,MR00938,AC023,2025-09-17,Engineer,Abnormal fuel flow indication noted in flight.,Minor,Inspected component and recorded condition.
+SNAG0503,MR00096,AC002,2025-04-09,Pilot,Engine oil pressure trending down.,Critical,Maintenance action completed and system rechecked.
+SNAG0504,MR01263,AC034,2025-04-12,Pilot,Eroded blade edges found during inspection.,Critical,Inspected component and recorded condition.
+SNAG0505,MR00933,AC077,2022-11-21,Pilot,Compressor blade erosion noted.,Major,Removed defective part and installed replacement.
+SNAG0506,MR00402,AC051,2024-08-29,Engineer,Low pressure indication requires inspection.,Major,Inspected component and recorded condition.
+SNAG0507,MR00644,AC080,2025-11-21,Pilot,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0508,MR00848,AC083,2022-05-26,Engineer,"EGT trending high on climb, recheck after wash.",Major,Maintenance action completed and system rechecked.
+SNAG0509,MR01191,AC049,2022-12-11,Engineer,Fuel flow fluctuating during power changes.,Major,Inspected component and recorded condition.
+SNAG0510,MR00599,AC028,2025-11-17,Pilot,Abnormal vibration noted by crew during flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0511,MR00177,AC049,2024-10-21,Technician,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0512,MR01262,AC067,2024-09-20,Engineer,Erosion observed on several blades.,Minor,Inspected component and recorded condition.
+SNAG0513,MR00304,AC088,2025-07-10,Technician,Fuel flow trend outside normal range.,Major,Inspected component and recorded condition.
+SNAG0514,MR01320,AC033,2025-06-05,Pilot,"Climb EGT running higher than expected, inspect engine.",Major,Maintenance action completed and system rechecked.
+SNAG0515,MR01497,AC071,2023-02-02,Pilot,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0516,MR00110,AC051,2023-05-19,Pilot,Vibration trend increasing at operating RPM.,Major,Maintenance action completed and system rechecked.
+SNAG0517,MR00571,AC022,2025-03-21,Pilot,Sensor reading unstable at operating power.,Minor,Inspected component and recorded condition.
+SNAG0518,MR00454,AC019,2022-05-24,Technician,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0519,MR00072,AC032,2024-12-28,Technician,"Vib level above normal, monitor after inspection.",Critical,Inspected component and recorded condition.
+SNAG0520,MR00199,AC057,2025-03-17,Pilot,Pressure lower than expected after power increase.,Major,Inspected component and recorded condition.
+SNAG0521,MR00003,AC012,2023-01-17,Technician,Brief compressor stall reported during climb.,Major,Inspected component and recorded condition.
+SNAG0522,MR00849,AC100,2026-03-10,Technician,Bearing wear noted during inspection.,Minor,Inspected component and recorded condition.
+SNAG0523,MR00803,AC054,2024-03-07,Pilot,Pressure lower than expected after power increase.,Minor,Inspected component and recorded condition.
+SNAG0524,MR01342,AC044,2023-08-05,Technician,Turbine blade erosion requires attention.,Minor,Inspected component and recorded condition.
+SNAG0525,MR00812,AC025,2025-07-14,Engineer,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0526,MR01116,AC060,2025-12-11,Engineer,"Vib level above normal, monitor after inspection.",Major,Maintenance action completed and system rechecked.
+SNAG0527,MR01482,AC044,2023-09-30,Engineer,Bearing wear suspected from vibration trend.,Major,Inspected component and recorded condition.
+SNAG0528,MR00645,AC096,2024-05-03,Technician,Fuel consumption higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0529,MR00850,AC085,2024-12-25,Engineer,Fuel flow higher than expected at cruise power.,Minor,Removed defective part and installed replacement.
+SNAG0530,MR01242,AC095,2024-03-19,Technician,Oil pressure fluctuating during operation.,Major,Inspected component and recorded condition.
+SNAG0531,MR00057,AC080,2022-09-17,Pilot,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0532,MR00279,AC073,2024-06-06,Technician,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0533,MR00915,AC020,2023-10-24,Engineer,Momentary stall reported by pilot during climb.,Major,Inspected component and recorded condition.
+SNAG0534,MR00479,AC026,2024-03-07,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0535,MR00081,AC001,2025-05-23,Technician,Compressor blade erosion noted.,Major,Removed defective part and installed replacement.
+SNAG0536,MR00420,AC087,2026-07-31,Engineer,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.
+SNAG0537,MR01251,AC084,2024-04-02,Pilot,Pressure lower than expected after power increase.,Major,Inspected component and recorded condition.
+SNAG0538,MR00022,AC032,2025-03-08,Pilot,Blade leading edge showing erosion.,Minor,Inspected component and recorded condition.
+SNAG0539,MR00236,AC047,2025-08-22,Pilot,Fuel flow higher than expected at cruise power.,Minor,Maintenance action completed and system rechecked.
+SNAG0540,MR01422,AC003,2024-04-14,Engineer,Eroded blade edges found during inspection.,Major,Maintenance action completed and system rechecked.
+SNAG0541,MR00758,AC046,2023-08-07,Pilot,Pressure lower than expected after power increase.,Major,Maintenance action completed and system rechecked.
+SNAG0542,MR01227,AC054,2023-05-10,Pilot,Fuel consumption higher than expected.,Critical,Inspected component and recorded condition.
+SNAG0543,MR00091,AC006,2026-02-19,Technician,"Pressure drop observed, no visible leakage found.",Minor,Maintenance action completed and system rechecked.
+SNAG0544,MR00776,AC050,2023-01-05,Engineer,Excess vibration reported during climb.,Major,Inspected component and recorded condition.
+SNAG0545,MR00557,AC040,2025-08-14,Engineer,Blade leading edge showing erosion.,Major,Inspected component and recorded condition.
+SNAG0546,MR01201,AC062,2024-01-15,Technician,Sensor output outside expected range.,Minor,Inspected component and recorded condition.
+SNAG0547,MR00025,AC068,2023-10-02,Pilot,Eroded blade edges found during inspection.,Critical,Removed defective part and installed replacement.
+SNAG0548,MR00921,AC027,2025-08-24,Technician,Low oil pressure indication reported in flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0549,MR01334,AC008,2023-03-06,Technician,"Pressure drop observed, no visible leakage found.",Major,Inspected component and recorded condition.
+SNAG0550,MR00926,AC041,2025-04-01,Technician,Minor erosion found on turbine blades.,Minor,Inspected component and recorded condition.
+SNAG0551,MR01085,AC081,2025-01-05,Engineer,Excess vibration reported during climb.,Major,Inspected component and recorded condition.
+SNAG0552,MR00667,AC053,2023-04-02,Technician,Blade leading edge showing erosion.,Minor,Inspected component and recorded condition.
+SNAG0553,MR01124,AC076,2022-02-24,Pilot,Engine vibration above limit during run-up.,Minor,Inspected component and recorded condition.
+SNAG0554,MR01130,AC027,2024-03-22,Engineer,EGT above normal trend during power increase.,Major,Inspected component and recorded condition.
+SNAG0555,MR00729,AC092,2023-12-20,Engineer,Compressor stall felt during rapid throttle increase.,Minor,Removed defective part and installed replacement.
+SNAG0556,MR00604,AC095,2025-02-18,Technician,"Pressure drop observed, no visible leakage found.",Major,Maintenance action completed and system rechecked.
+SNAG0557,MR01088,AC046,2024-03-26,Technician,Fuel flow anomaly observed during engine run.,Minor,Inspected component and recorded condition.
+SNAG0558,MR00949,AC086,2024-07-27,Engineer,Engine experienced surge-like event at high power.,Minor,Inspected component and recorded condition.
+SNAG0559,MR00338,AC068,2023-09-27,Engineer,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0560,MR00840,AC049,2022-08-08,Technician,Fuel flow indication intermittent.,Major,Removed defective part and installed replacement.
+SNAG0561,MR01434,AC043,2025-06-15,Engineer,Momentary stall reported by pilot during climb.,Minor,Inspected component and recorded condition.
+SNAG0562,MR00788,AC093,2023-05-23,Technician,"EGT trending high on climb, recheck after wash.",Major,Inspected component and recorded condition.
+SNAG0563,MR01066,AC030,2024-09-13,Pilot,Erosion observed on several blades.,Minor,Inspected component and recorded condition.
+SNAG0564,MR00149,AC059,2024-05-02,Technician,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0565,MR00158,AC014,2025-03-18,Technician,Momentary stall reported by pilot during climb.,Major,Inspected component and recorded condition.
+SNAG0566,MR00254,AC046,2025-12-16,Technician,Vibration trend increasing at operating RPM.,Minor,Inspected component and recorded condition.
+SNAG0567,MR01154,AC076,2026-08-24,Technician,Bearing vibration increasing over recent sorties.,Minor,Removed defective part and installed replacement.
+SNAG0568,MR00267,AC062,2026-04-13,Technician,"Oil pressure dropped during climb, monitor closely.",Major,Inspected component and recorded condition.
+SNAG0569,MR00578,AC066,2025-01-05,Engineer,Compressor disturbance noted during acceleration.,Minor,Inspected component and recorded condition.
+SNAG0570,MR01036,AC007,2023-07-08,Engineer,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0571,MR00429,AC043,2024-07-18,Pilot,"High EGT noted during climb, #1 eng. Monitor next sortie.",Minor,Inspected component and recorded condition.
+SNAG0572,MR00413,AC081,2024-02-13,Technician,Low oil pressure indication reported in flight.,Minor,Inspected component and recorded condition.
+SNAG0573,MR00142,AC003,2024-07-08,Technician,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0574,MR00153,AC091,2024-06-21,Engineer,Pressure lower than expected after power increase.,Major,Removed defective part and installed replacement.
+SNAG0575,MR00037,AC020,2023-03-11,Technician,Bearing condition showing increased wear.,Minor,Inspected component and recorded condition.
+SNAG0576,MR00119,AC016,2024-11-17,Technician,Fuel flow trend outside normal range.,Minor,Inspected component and recorded condition.
+SNAG0577,MR00301,AC055,2024-05-05,Engineer,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0578,MR00994,AC055,2025-05-30,Pilot,Excess vibration reported during climb.,Major,Inspected component and recorded condition.
+SNAG0579,MR00166,AC086,2023-01-25,Pilot,Turbine blade erosion requires attention.,Major,Inspected component and recorded condition.
+SNAG0580,MR00531,AC005,2024-01-28,Technician,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0581,MR01396,AC040,2024-08-30,Technician,Blade erosion visible during inspection.,Major,Inspected component and recorded condition.
+SNAG0582,MR01088,AC046,2024-03-26,Technician,Fuel flow trend outside normal range.,Major,Inspected component and recorded condition.
+SNAG0583,MR01216,AC090,2023-06-08,Technician,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0584,MR00479,AC026,2024-03-07,Technician,"High temp indication during climb, recheck sensors.",Major,Inspected component and recorded condition.
+SNAG0585,MR00290,AC044,2024-07-31,Technician,Unstable sensor signal requires replacement.,Major,Inspected component and recorded condition.
+SNAG0586,MR00795,AC071,2023-04-29,Pilot,Fuel flow higher than expected at cruise power.,Minor,Maintenance action completed and system rechecked.
+SNAG0587,MR00234,AC013,2024-07-14,Pilot,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0588,MR01257,AC026,2024-02-12,Technician,Engine vibration above limit during run-up.,Critical,Functional test completed and readings verified.
+SNAG0589,MR00800,AC028,2026-06-02,Technician,Erosion observed on several blades.,Major,Inspected component and recorded condition.
+SNAG0590,MR00218,AC083,2024-08-29,Engineer,Low oil pressure indication reported in flight.,Major,Maintenance action completed and system rechecked.
+SNAG0591,MR00996,AC006,2024-07-07,Engineer,Sensor indication dropped briefly in flight.,Major,Functional test completed and readings verified.
+SNAG0592,MR00213,AC019,2024-06-18,Technician,Low oil pressure indication reported in flight.,Major,Inspected component and recorded condition.
+SNAG0593,MR00859,AC030,2023-05-04,Pilot,Fuel flow unstable during climb.,Minor,Inspected component and recorded condition.
+SNAG0594,MR00407,AC045,2025-07-29,Engineer,Intermittent indication traced to sensor.,Major,Inspected component and recorded condition.
+SNAG0595,MR01050,AC046,2025-03-31,Technician,Engine vibration above limit during run-up.,Major,Inspected component and recorded condition.
+SNAG0596,MR00856,AC092,2025-03-26,Technician,EGT above normal trend during power increase.,Critical,Inspected component and recorded condition.
+SNAG0597,MR00190,AC054,2023-08-29,Technician,Engine experienced surge-like event at high power.,Minor,Inspected component and recorded condition.
+SNAG0598,MR00028,AC091,2024-04-15,Engineer,Compressor blade erosion noted.,Major,Removed defective part and installed replacement.
+SNAG0599,MR00521,AC010,2024-05-17,Technician,"High vibration observed, possible rotating imbalance.",Minor,Inspected component and recorded condition.
+SNAG0600,MR01363,AC056,2024-04-06,Technician,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0601,MR01249,AC075,2025-04-08,Pilot,Minor erosion found on turbine blades.,Minor,Inspected component and recorded condition.
+SNAG0602,MR01154,AC076,2026-08-24,Pilot,Bearing wear noted during inspection.,Minor,Removed defective part and installed replacement.
+SNAG0603,MR01257,AC026,2024-02-12,Technician,Engine vibration above limit during run-up.,Critical,Functional test completed and readings verified.
+SNAG0604,MR00691,AC071,2025-03-21,Engineer,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0605,MR01175,AC059,2026-07-18,Technician,Low pressure indication requires inspection.,Minor,Inspected component and recorded condition.
+SNAG0606,MR01131,AC057,2022-07-02,Technician,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0607,MR00080,AC100,2025-04-24,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Minor,Inspected component and recorded condition.
+SNAG0608,MR00686,AC078,2024-06-22,Technician,"Possible bearing degradation, inspect further.",Major,Removed defective part and installed replacement.
+SNAG0609,MR01087,AC077,2026-08-02,Engineer,Bearing vibration increasing over recent sorties.,Minor,Inspected component and recorded condition.
+SNAG0610,MR01395,AC039,2025-01-19,Technician,Eroded blade edges found during inspection.,Critical,Removed defective part and installed replacement.
+SNAG0611,MR01377,AC072,2025-07-26,Engineer,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0612,MR01096,AC007,2025-05-31,Technician,Vibration trend increasing at operating RPM.,Major,Inspected component and recorded condition.
+SNAG0613,MR00569,AC073,2024-03-27,Engineer,Fuel flow anomaly observed during engine run.,Major,Inspected component and recorded condition.
+SNAG0614,MR00575,AC081,2023-07-10,Technician,Blade erosion visible during inspection.,Minor,Inspected component and recorded condition.
+SNAG0615,MR00722,AC059,2025-09-21,Pilot,Low oil pressure indication reported in flight.,Major,Inspected component and recorded condition.
+SNAG0616,MR00100,AC026,2024-05-29,Pilot,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0617,MR00848,AC083,2022-05-26,Engineer,"Climb EGT running higher than expected, inspect engine.",Major,Maintenance action completed and system rechecked.
+SNAG0618,MR00062,AC042,2025-03-20,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Major,Inspected component and recorded condition.
+SNAG0619,MR00376,AC077,2025-05-06,Technician,Vibration trend increasing at operating RPM.,Critical,Inspected component and recorded condition.
+SNAG0620,MR01424,AC079,2024-08-14,Technician,"EGT rise observed at high power, requires follow-up.",Major,Maintenance action completed and system rechecked.
+SNAG0621,MR00020,AC082,2025-04-01,Technician,Engine experienced surge-like event at high power.,Minor,Removed defective part and installed replacement.
+SNAG0622,MR01207,AC046,2025-02-14,Engineer,"High temp indication during climb, recheck sensors.",Major,Maintenance action completed and system rechecked.
+SNAG0623,MR01113,AC017,2025-09-14,Technician,"Vibration noted at high RPM, needs inspection.",Major,Maintenance action completed and system rechecked.
+SNAG0624,MR00309,AC043,2024-05-25,Technician,Bearing wear suspected from vibration trend.,Major,Inspected component and recorded condition.
+SNAG0625,MR00749,AC047,2024-11-05,Pilot,Engine vibration increased during power change.,Critical,Inspected component and recorded condition.
+SNAG0626,MR00378,AC040,2024-02-02,Engineer,"Stall event during power transition, inspect compressor.",Minor,Inspected component and recorded condition.
+SNAG0627,MR01064,AC069,2024-06-20,Technician,Eroded blade edges found during inspection.,Major,Inspected component and recorded condition.
+SNAG0628,MR01083,AC075,2026-05-27,Pilot,Abnormal fuel flow indication noted in flight.,Minor,Inspected component and recorded condition.
+SNAG0629,MR00261,AC060,2025-04-29,Technician,Sensor output outside expected range.,Minor,Maintenance action completed and system rechecked.
+SNAG0630,MR00564,AC032,2024-06-19,Pilot,Fuel flow fluctuating during power changes.,Critical,Inspected component and recorded condition.
+SNAG0631,MR01231,AC059,2023-05-11,Engineer,"High temp indication during climb, recheck sensors.",Critical,Maintenance action completed and system rechecked.
+SNAG0632,MR01251,AC084,2024-04-02,Technician,Pressure lower than expected after power increase.,Minor,Inspected component and recorded condition.
+SNAG0633,MR01362,AC083,2024-03-27,Technician,Sensor reading unstable at operating power.,Minor,Inspected component and recorded condition.
+SNAG0634,MR00368,AC080,2024-08-15,Technician,Excess vibration reported during climb.,Minor,Inspected component and recorded condition.
+SNAG0635,MR00057,AC080,2022-09-17,Technician,"Vibration noted at high RPM, needs inspection.",Minor,Inspected component and recorded condition.
+SNAG0636,MR00012,AC012,2025-02-14,Technician,"Pressure drop observed, no visible leakage found.",Minor,Inspected component and recorded condition.
+SNAG0637,MR00655,AC093,2022-12-13,Pilot,Minor erosion found on turbine blades.,Major,Removed defective part and installed replacement.
+SNAG0638,MR01090,AC059,2026-04-21,Engineer,Fuel flow fluctuating during power changes.,Major,Inspected component and recorded condition.
+SNAG0639,MR00892,AC051,2023-07-04,Pilot,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0640,MR00062,AC042,2025-03-20,Engineer,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0641,MR00473,AC081,2024-08-13,Technician,Fuel flow unstable during climb.,Major,Maintenance action completed and system rechecked.
+SNAG0642,MR00431,AC003,2022-12-24,Technician,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0643,MR00059,AC079,2025-05-31,Technician,Pressure lower than expected after power increase.,Major,Maintenance action completed and system rechecked.
+SNAG0644,MR01224,AC095,2025-03-26,Pilot,"Vibration noted at high RPM, needs inspection.",Major,Inspected component and recorded condition.
+SNAG0645,MR00707,AC022,2025-09-05,Engineer,Sensor indication dropped briefly in flight.,Major,Removed defective part and installed replacement.
+SNAG0646,MR00701,AC091,2024-03-10,Technician,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0647,MR01216,AC090,2023-06-08,Technician,Turbine blade erosion requires attention.,Minor,Inspected component and recorded condition.
+SNAG0648,MR00512,AC032,2025-03-25,Technician,Blade leading edge showing erosion.,Minor,Inspected component and recorded condition.
+SNAG0649,MR00350,AC033,2024-09-23,Engineer,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0650,MR01145,AC088,2025-09-07,Technician,"Pressure drop observed, no visible leakage found.",Major,Maintenance action completed and system rechecked.
+SNAG0651,MR00119,AC016,2024-11-17,Technician,Fuel flow fluctuating during power changes.,Critical,Inspected component and recorded condition.
+SNAG0652,MR01180,AC087,2026-03-19,Engineer,"Stall event during power transition, inspect compressor.",Minor,Inspected component and recorded condition.
+SNAG0653,MR01109,AC077,2025-05-03,Technician,"High temp indication during climb, recheck sensors.",Minor,Maintenance action completed and system rechecked.
+SNAG0654,MR00071,AC075,2025-04-16,Engineer,Vibration trend increasing at operating RPM.,Minor,Inspected component and recorded condition.
+SNAG0655,MR00902,AC084,2024-02-18,Technician,"High EGT noted during climb, #1 eng. Monitor next sortie.",Major,Inspected component and recorded condition.
+SNAG0656,MR01450,AC095,2023-12-25,Engineer,"Short stall event observed, requires inspection.",Minor,Inspected component and recorded condition.
+SNAG0657,MR00800,AC028,2026-06-02,Technician,Turbine blade erosion requires attention.,Minor,Inspected component and recorded condition.
+SNAG0658,MR01112,AC056,2022-08-28,Pilot,"EGT trending high on climb, recheck after wash.",Major,Maintenance action completed and system rechecked.
+SNAG0659,MR00869,AC080,2026-05-04,Engineer,Engine sensor fault observed during test.,Minor,Inspected component and recorded condition.
+SNAG0660,MR00955,AC012,2024-10-25,Pilot,Fuel flow indication intermittent.,Minor,Inspected component and recorded condition.
+SNAG0661,MR00514,AC006,2026-02-23,Pilot,"Pressure drop observed, no visible leakage found.",Minor,Inspected component and recorded condition.
+SNAG0662,MR00592,AC045,2024-10-27,Technician,Turbine blade erosion requires attention.,Minor,Inspected component and recorded condition.
+SNAG0663,MR01400,AC003,2024-11-27,Technician,Oil pressure below normal at higher power.,Major,Inspected component and recorded condition.
+SNAG0664,MR00019,AC077,2025-01-26,Technician,"Vib level above normal, monitor after inspection.",Major,Functional test completed and readings verified.
+SNAG0665,MR00458,AC099,2022-10-24,Technician,"High vibration observed, possible rotating imbalance.",Minor,Maintenance action completed and system rechecked.
+SNAG0666,MR01275,AC012,2025-06-29,Pilot,"Stall event during power transition, inspect compressor.",Minor,Maintenance action completed and system rechecked.
+SNAG0667,MR01177,AC043,2024-01-08,Engineer,"EGT trend increasing during power setting, inspect.",Critical,Inspected component and recorded condition.
+SNAG0668,MR00236,AC047,2025-08-22,Technician,Fuel flow indication intermittent.,Minor,Maintenance action completed and system rechecked.
+SNAG0669,MR00844,AC082,2026-04-26,Technician,"Engine EGT slightly high on climb, no other abnormality.",Major,Maintenance action completed and system rechecked.
+SNAG0670,MR00299,AC075,2023-11-07,Technician,Compressor blade erosion noted.,Minor,Maintenance action completed and system rechecked.
+SNAG0671,MR01407,AC032,2023-04-29,Technician,Vibration trend increasing at operating RPM.,Minor,Maintenance action completed and system rechecked.
+SNAG0672,MR00201,AC030,2023-11-01,Technician,Compressor stall felt during rapid throttle increase.,Minor,Inspected component and recorded condition.
+SNAG0673,MR01018,AC053,2023-10-24,Technician,Low pressure indication requires inspection.,Minor,Maintenance action completed and system rechecked.
+SNAG0674,MR00365,AC057,2023-12-03,Pilot,Engine vibration increased during power change.,Major,Functional test completed and readings verified.
+SNAG0675,MR01137,AC091,2023-10-28,Technician,"EGT rise observed at high power, requires follow-up.",Minor,Inspected component and recorded condition.
+SNAG0676,MR01076,AC068,2024-04-29,Engineer,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0677,MR00241,AC026,2023-04-02,Technician,"High temp indication during climb, recheck sensors.",Major,Inspected component and recorded condition.
+SNAG0678,MR01161,AC023,2023-07-08,Engineer,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0679,MR00944,AC014,2025-01-15,Technician,Abnormal vibration noted by crew during flight.,Major,Inspected component and recorded condition.
+SNAG0680,MR00533,AC032,2026-03-15,Pilot,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0681,MR00865,AC081,2024-03-01,Technician,"Oil pressure dropped during climb, monitor closely.",Minor,Inspected component and recorded condition.
+SNAG0682,MR00153,AC091,2024-06-21,Pilot,Low pressure indication requires inspection.,Major,Removed defective part and installed replacement.
+SNAG0683,MR00120,AC094,2023-10-03,Technician,Engine vibration above limit during run-up.,Major,Maintenance action completed and system rechecked.
+SNAG0684,MR00230,AC053,2022-11-23,Technician,Abnormal vibration noted by crew during flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0685,MR00047,AC059,2025-01-11,Pilot,Compressor stall felt during rapid throttle increase.,Minor,Inspected component and recorded condition.
+SNAG0686,MR01309,AC059,2025-07-26,Engineer,Fuel flow anomaly observed during engine run.,Minor,Inspected component and recorded condition.
+SNAG0687,MR00807,AC077,2024-03-27,Engineer,Bearing wear suspected from vibration trend.,Minor,Inspected component and recorded condition.
+SNAG0688,MR00977,AC009,2025-06-03,Technician,"EGT trend increasing during power setting, inspect.",Major,Maintenance action completed and system rechecked.
+SNAG0689,MR01388,AC004,2025-08-01,Pilot,Brief compressor stall reported during climb.,Minor,Functional test completed and readings verified.
+SNAG0690,MR00948,AC043,2026-08-04,Technician,Excess vibration reported during climb.,Minor,Inspected component and recorded condition.
+SNAG0691,MR00617,AC043,2024-12-11,Pilot,Compressor stall felt during rapid throttle increase.,Critical,Inspected component and recorded condition.
+SNAG0692,MR01275,AC012,2025-06-29,Technician,Compressor stall felt during rapid throttle increase.,Minor,Maintenance action completed and system rechecked.
+SNAG0693,MR00966,AC052,2024-01-06,Engineer,Eroded blade edges found during inspection.,Minor,Removed defective part and installed replacement.
+SNAG0694,MR00835,AC078,2024-01-23,Pilot,Abnormal fuel flow indication noted in flight.,Critical,Inspected component and recorded condition.
+SNAG0695,MR01281,AC006,2024-11-29,Pilot,Excess vibration reported during climb.,Major,Inspected component and recorded condition.
+SNAG0696,MR00535,AC056,2024-04-19,Technician,Engine vibration increased during power change.,Major,Inspected component and recorded condition.
+SNAG0697,MR00288,AC082,2024-11-08,Technician,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0698,MR00872,AC015,2024-03-06,Engineer,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.
+SNAG0699,MR01368,AC049,2023-11-28,Engineer,Fuel flow fluctuating during power changes.,Major,Maintenance action completed and system rechecked.
+SNAG0700,MR00050,AC083,2024-03-04,Pilot,Low oil pressure indication reported in flight.,Minor,Inspected component and recorded condition.
+SNAG0701,MR00198,AC083,2024-02-17,Technician,Blade erosion visible during inspection.,Minor,Inspected component and recorded condition.
+SNAG0702,MR00905,AC098,2023-07-22,Technician,Compressor blade erosion noted.,Minor,Inspected component and recorded condition.
+SNAG0703,MR00237,AC093,2025-08-24,Technician,Momentary stall reported by pilot during climb.,Minor,Inspected component and recorded condition.
+SNAG0704,MR00999,AC003,2025-08-30,Pilot,"Engine EGT slightly high on climb, no other abnormality.",Major,Inspected component and recorded condition.
+SNAG0705,MR00218,AC083,2024-08-29,Technician,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0706,MR00124,AC088,2023-05-28,Pilot,"Stall event during power transition, inspect compressor.",Major,Maintenance action completed and system rechecked.
+SNAG0707,MR00358,AC077,2026-07-23,Engineer,Momentary stall reported by pilot during climb.,Minor,Inspected component and recorded condition.
+SNAG0708,MR01450,AC095,2023-12-25,Technician,Compressor disturbance noted during acceleration.,Major,Inspected component and recorded condition.
+SNAG0709,MR01472,AC092,2022-08-01,Technician,Abnormal vibration noted by crew during flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0710,MR00679,AC084,2025-03-23,Engineer,"High vibration observed, possible rotating imbalance.",Major,Inspected component and recorded condition.
+SNAG0711,MR00700,AC043,2024-04-04,Technician,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0712,MR00852,AC032,2022-04-23,Technician,"Oil pressure dropped during climb, monitor closely.",Minor,Removed defective part and installed replacement.
+SNAG0713,MR01118,AC062,2024-05-21,Engineer,Low oil pressure indication reported in flight.,Minor,Inspected component and recorded condition.
+SNAG0714,MR01280,AC069,2026-05-23,Technician,"EGT rise observed at high power, requires follow-up.",Critical,Inspected component and recorded condition.
+SNAG0715,MR00086,AC088,2026-07-28,Technician,Low oil pressure indication reported in flight.,Major,Inspected component and recorded condition.
+SNAG0716,MR01328,AC046,2025-05-07,Pilot,Abnormal bearing noise during ground run.,Minor,Removed defective part and installed replacement.
+SNAG0717,MR01440,AC050,2024-12-10,Technician,EGT above normal trend during power increase.,Minor,Maintenance action completed and system rechecked.
+SNAG0718,MR01016,AC062,2023-10-29,Technician,Pressure lower than expected after power increase.,Major,Inspected component and recorded condition.
+SNAG0719,MR00738,AC023,2026-08-02,Technician,"Engine EGT slightly high on climb, no other abnormality.",Critical,Inspected component and recorded condition.
+SNAG0720,MR01135,AC062,2024-06-14,Engineer,Sensor indication dropped briefly in flight.,Minor,Removed defective part and installed replacement.
+SNAG0721,MR00969,AC094,2023-09-03,Pilot,"Climb EGT running higher than expected, inspect engine.",Minor,Inspected component and recorded condition.
+SNAG0722,MR01478,AC043,2024-08-31,Pilot,Blade leading edge showing erosion.,Minor,Inspected component and recorded condition.
+SNAG0723,MR00223,AC025,2024-06-10,Pilot,Faulty sensor indication reported by crew.,Minor,Inspected component and recorded condition.
+SNAG0724,MR01058,AC068,2025-11-08,Technician,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0725,MR01419,AC077,2024-09-15,Technician,"Oil pressure dropped during climb, monitor closely.",Major,Inspected component and recorded condition.
+SNAG0726,MR01030,AC090,2024-09-06,Pilot,"Oil pressure dropped during climb, monitor closely.",Minor,Removed defective part and installed replacement.
+SNAG0727,MR01434,AC043,2025-06-15,Engineer,Brief compressor stall reported during climb.,Major,Inspected component and recorded condition.
+SNAG0728,MR00091,AC006,2026-02-19,Technician,Low oil pressure indication reported in flight.,Minor,Maintenance action completed and system rechecked.
+SNAG0729,MR01103,AC044,2024-07-24,Engineer,Abnormal bearing noise during ground run.,Major,Inspected component and recorded condition.
+SNAG0730,MR01365,AC088,2024-06-29,Technician,Compressor blade erosion noted.,Major,Maintenance action completed and system rechecked.
+SNAG0731,MR00809,AC080,2025-11-03,Technician,Fuel flow unstable during climb.,Major,Inspected component and recorded condition.
+SNAG0732,MR01197,AC036,2024-12-28,Engineer,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0733,MR00154,AC046,2024-09-27,Engineer,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0734,MR00572,AC055,2024-06-04,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Removed defective part and installed replacement.
+SNAG0735,MR00991,AC003,2025-04-19,Engineer,Bearing condition below expected standard.,Major,Maintenance action completed and system rechecked.
+SNAG0736,MR00975,AC046,2026-08-03,Technician,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0737,MR00674,AC032,2025-06-12,Technician,Low oil pressure indication reported in flight.,Minor,Inspected component and recorded condition.
+SNAG0738,MR00768,AC061,2023-04-19,Engineer,"High temp indication during climb, recheck sensors.",Major,Inspected component and recorded condition.
+SNAG0739,MR00373,AC078,2022-10-26,Technician,Blade leading edge showing erosion.,Minor,Removed defective part and installed replacement.
+SNAG0740,MR00990,AC081,2025-05-23,Pilot,"Vibration noted at high RPM, needs inspection.",Critical,Maintenance action completed and system rechecked.
+SNAG0741,MR00047,AC059,2025-01-11,Pilot,"Stall event during power transition, inspect compressor.",Major,Inspected component and recorded condition.
+SNAG0742,MR00823,AC031,2023-01-30,Technician,Blade leading edge showing erosion.,Minor,Removed defective part and installed replacement.
+SNAG0743,MR00154,AC046,2024-09-27,Technician,Engine oil pressure trending down.,Major,Maintenance action completed and system rechecked.
+SNAG0744,MR00901,AC047,2025-02-27,Technician,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.
+SNAG0745,MR01202,AC059,2024-08-16,Pilot,Engine sensor fault observed during test.,Minor,Fault isolated and corrective repair completed.
+SNAG0746,MR00074,AC058,2024-10-20,Technician,"EGT trend increasing during power setting, inspect.",Minor,Inspected component and recorded condition.
+SNAG0747,MR01251,AC084,2024-04-02,Technician,Low pressure indication requires inspection.,Major,Inspected component and recorded condition.
+SNAG0748,MR01442,AC026,2023-10-21,Technician,Brief compressor stall reported during climb.,Minor,Functional test completed and readings verified.
+SNAG0749,MR00042,AC056,2024-03-27,Engineer,"Vibration noted at high RPM, needs inspection.",Major,Inspected component and recorded condition.
+SNAG0750,MR01456,AC018,2026-01-31,Technician,Oil pressure below normal at higher power.,Minor,Inspected component and recorded condition.
+SNAG0751,MR00447,AC045,2024-05-01,Technician,Compressor blade erosion noted.,Major,Inspected component and recorded condition.
+SNAG0752,MR01068,AC029,2023-02-07,Technician,Vibration trend increasing at operating RPM.,Critical,Inspected component and recorded condition.
+SNAG0753,MR00045,AC001,2024-12-15,Engineer,Blade surface wear higher than expected.,Minor,Removed defective part and installed replacement.
+SNAG0754,MR00230,AC053,2022-11-23,Technician,"High vibration observed, possible rotating imbalance.",Major,Maintenance action completed and system rechecked.
+SNAG0755,MR00303,AC051,2023-12-09,Engineer,Fuel flow trend outside normal range.,Minor,Maintenance action completed and system rechecked.
+SNAG0756,MR01159,AC083,2025-03-12,Technician,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0757,MR00723,AC084,2024-01-05,Pilot,Brief compressor stall reported during climb.,Major,Removed defective part and installed replacement.
+SNAG0758,MR01041,AC056,2022-11-11,Technician,"Climb EGT running higher than expected, inspect engine.",Major,Maintenance action completed and system rechecked.
+SNAG0759,MR00398,AC068,2025-07-14,Engineer,"Vibration noted at high RPM, needs inspection.",Major,Maintenance action completed and system rechecked.
+SNAG0760,MR00883,AC077,2024-07-19,Technician,Fuel flow trend outside normal range.,Minor,Maintenance action completed and system rechecked.
+SNAG0761,MR01262,AC067,2024-09-20,Pilot,Eroded blade edges found during inspection.,Minor,Inspected component and recorded condition.
+SNAG0762,MR00817,AC025,2024-06-30,Technician,"Pressure drop observed, no visible leakage found.",Major,Maintenance action completed and system rechecked.
+SNAG0763,MR00777,AC075,2024-02-08,Engineer,EGT above normal trend during power increase.,Minor,Inspected component and recorded condition.
+SNAG0764,MR00548,AC010,2025-09-17,Technician,"High temp indication during climb, recheck sensors.",Minor,Inspected component and recorded condition.
+SNAG0765,MR00931,AC017,2024-08-12,Technician,"Engine EGT slightly high on climb, no other abnormality.",Major,Maintenance action completed and system rechecked.
+SNAG0766,MR00937,AC083,2025-01-06,Technician,"High vibration observed, possible rotating imbalance.",Minor,Maintenance action completed and system rechecked.
+SNAG0767,MR00234,AC013,2024-07-14,Technician,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0768,MR01163,AC054,2024-04-08,Engineer,Turbine blade erosion requires attention.,Major,Inspected component and recorded condition.
+SNAG0769,MR00182,AC086,2025-12-29,Technician,"Stall event during power transition, inspect compressor.",Minor,Inspected component and recorded condition.
+SNAG0770,MR00660,AC005,2024-05-11,Technician,"Climb EGT running higher than expected, inspect engine.",Critical,Maintenance action completed and system rechecked.
+SNAG0771,MR01269,AC082,2025-08-14,Technician,Fuel flow fluctuating during power changes.,Minor,Inspected component and recorded condition.
+SNAG0772,MR01406,AC053,2023-10-18,Engineer,Fuel flow indication intermittent.,Minor,Maintenance action completed and system rechecked.
+SNAG0773,MR00892,AC051,2023-07-04,Engineer,"Vib level above normal, monitor after inspection.",Minor,Inspected component and recorded condition.
+SNAG0774,MR01295,AC044,2023-07-29,Technician,"Short stall event observed, requires inspection.",Major,Inspected component and recorded condition.
+SNAG0775,MR00379,AC100,2023-09-08,Engineer,"EGT trending high on climb, recheck after wash.",Minor,Inspected component and recorded condition.
+SNAG0776,MR00805,AC007,2024-11-26,Engineer,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0777,MR01154,AC076,2026-08-24,Technician,"Possible bearing degradation, inspect further.",Major,Removed defective part and installed replacement.
+SNAG0778,MR00350,AC033,2024-09-23,Technician,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0779,MR01209,AC025,2026-04-02,Engineer,Fuel flow indication intermittent.,Major,Maintenance action completed and system rechecked.
+SNAG0780,MR00051,AC026,2025-06-10,Pilot,Compressor blade erosion noted.,Minor,Inspected component and recorded condition.
+SNAG0781,MR00347,AC053,2022-09-09,Technician,Blade erosion visible during inspection.,Minor,Inspected component and recorded condition.
+SNAG0782,MR01057,AC033,2025-08-01,Technician,Engine oil pressure trending down.,Major,Inspected component and recorded condition.
+SNAG0783,MR01407,AC032,2023-04-29,Pilot,Vibration trend increasing at operating RPM.,Minor,Maintenance action completed and system rechecked.
+SNAG0784,MR00447,AC045,2024-05-01,Technician,Eroded blade edges found during inspection.,Major,Inspected component and recorded condition.
+SNAG0785,MR00602,AC049,2025-04-06,Pilot,"Climb EGT running higher than expected, inspect engine.",Minor,Inspected component and recorded condition.
+SNAG0786,MR00355,AC097,2023-11-06,Technician,"Oil pressure dropped during climb, monitor closely.",Minor,Maintenance action completed and system rechecked.
+SNAG0787,MR01376,AC071,2024-09-13,Pilot,Bearing condition below expected standard.,Major,Inspected component and recorded condition.
+SNAG0788,MR00391,AC065,2023-09-07,Technician,Low oil pressure indication reported in flight.,Major,Inspected component and recorded condition.
+SNAG0789,MR00408,AC043,2025-08-25,Technician,"Vibration noted at high RPM, needs inspection.",Minor,Inspected component and recorded condition.
+SNAG0790,MR00592,AC045,2024-10-27,Pilot,Blade surface wear higher than expected.,Minor,Inspected component and recorded condition.
+SNAG0791,MR00654,AC100,2022-04-27,Pilot,Turbine blade erosion requires attention.,Minor,Removed defective part and installed replacement.
+SNAG0792,MR00579,AC006,2025-02-28,Engineer,Bearing wear noted during inspection.,Major,Inspected component and recorded condition.
+SNAG0793,MR00373,AC078,2022-10-26,Technician,Blade erosion visible during inspection.,Minor,Removed defective part and installed replacement.
+SNAG0794,MR01402,AC076,2024-04-10,Technician,EGT above normal trend during power increase.,Major,Inspected component and recorded condition.
+SNAG0795,MR00784,AC076,2023-06-02,Technician,"Vibration noted at high RPM, needs inspection.",Minor,Inspected component and recorded condition.
+SNAG0796,MR01066,AC030,2024-09-13,Technician,Compressor blade erosion noted.,Minor,Inspected component and recorded condition.
+SNAG0797,MR00491,AC001,2022-04-28,Pilot,Bearing vibration increasing over recent sorties.,Minor,Removed defective part and installed replacement.
+SNAG0798,MR00626,AC003,2026-05-07,Engineer,Bearing wear suspected from vibration trend.,Minor,Inspected component and recorded condition.
+SNAG0799,MR00948,AC043,2026-08-04,Technician,Abnormal vibration noted by crew during flight.,Minor,Inspected component and recorded condition.
+SNAG0800,MR00247,AC045,2025-06-04,Technician,Oil pressure fluctuating during operation.,Minor,Inspected component and recorded condition.

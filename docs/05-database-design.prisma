@@ -1,0 +1,515 @@
+// Fleet Digital Twin — Fleet Digital Twin — data model for visualizer import
+// Import: dbdiagram.io (prisma) · Prisma Data Modeler · dbgate
+// Postgres · 20 tables · 4 groups: reference, fleet, time-series/ML, maintenance/audit
+// Detail: docs/05-database-design.md
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ───────────────────────────────── AUTH & AUDIT ─────────────────────────────────
+
+enum user_role {
+  commander
+  maintenance_officer
+  viewer
+}
+
+model users {
+  id            Int      @id @default(autoincrement())
+  username      String   @unique @db.VarChar(48)
+  passwordHash  String   @map("password_hash") @db.VarChar(255)
+  fullName      String   @map("full_name") @db.VarChar(96)
+  role          user_role
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  lastLoginAt   DateTime? @map("last_login_at") @db.Timestamptz(6)
+
+  workOrders     work_order[]
+  agencyBookings agency_booking[]
+  stockMovements stock_movement[]
+  alerts         alert[]
+  auditLogs      audit_log[]
+
+  @@map("users")
+}
+
+// ───────────────────────────────── REFERENCE ─────────────────────────────────
+
+model aircraft_ref {
+  id                Int     @id @default(autoincrement())
+  aircraftId        String  @unique @map("aircraft_id") @db.VarChar(8)
+  tailNumber        String  @map("tail_number") @db.VarChar(16)
+  aircraftModel     String  @map("aircraft_model") @db.VarChar(16)
+  engineId          String  @map("engine_id") @db.VarChar(16)
+  engineModel       String  @map("engine_model") @db.VarChar(16)
+  manufactureDate   DateTime? @map("manufacture_date") @db.Date
+  inductionDate     DateTime? @map("induction_date") @db.Date
+  homeBase          String? @map("home_base") @db.VarChar(16)
+  totalFlightHours  Int?    @map("total_flight_hours")
+  totalCycles       Int?    @map("total_cycles")
+  currentStatus     String? @map("current_status") @db.VarChar(24)
+
+  aircraft      aircraft?
+  componentRefs component_ref[]
+  flightOps     flight_ops_monthly[]
+  techRecords   technical_record[]
+  snags         snag[]
+
+  @@index([aircraftModel])
+  @@map("aircraft_ref")
+}
+
+model component_ref {
+  id               Int     @id @default(autoincrement())
+  componentId      String  @unique @map("component_id") @db.VarChar(12)
+  aircraftRefId    Int     @map("aircraft_ref_id")
+  engineId         String  @map("engine_id") @db.VarChar(16)
+  componentName    String  @map("component_name") @db.VarChar(48)
+  componentSystem  String  @map("component_system") @db.VarChar(24)
+  installationDate DateTime? @map("installation_date") @db.Date
+  operatingHours   Int?    @map("operating_hours")
+  operatingCycles  Int?    @map("operating_cycles")
+  lifeLimitHours   Int?    @map("life_limit_hours")
+  lifeLimitCycles  Int?    @map("life_limit_cycles")
+  healthStatus     String? @map("health_status") @db.VarChar(16)
+  timesReplaced    Int     @default(0) @map("times_replaced")
+
+  aircraftRef     aircraft_ref         @relation(fields: [aircraftRefId], references: [id], onDelete: Cascade)
+  spares          spare[]
+  techRecords     technical_record[]
+
+  @@index([aircraftRefId])
+  @@index([componentName])
+  @@map("component_ref")
+}
+
+model flight_ops_monthly {
+  id                     Int     @id @default(autoincrement())
+  aircraftRefId          Int     @map("aircraft_ref_id")
+  month                  String  @db.Char(7)
+  flightHours            Decimal? @map("flight_hours") @db.Decimal(8, 2)
+  sorties                Int?    @map("sorties")
+  flightCycles           Int?    @map("flight_cycles")
+  avgSortieDurationHours Decimal? @map("avg_sortie_duration_hours") @db.Decimal(5, 2)
+  highStressSorties      Int?    @map("high_stress_sorties")
+  daysAvailable          Int?    @map("days_available")
+  daysUnavailable        Int?    @map("days_unavailable")
+
+  aircraftRef aircraft_ref @relation(fields: [aircraftRefId], references: [id], onDelete: Cascade)
+
+  @@unique([aircraftRefId, month])
+  @@index([aircraftRefId, month])
+  @@map("flight_ops_monthly")
+}
+
+// ───────────────────────────────── FLEET ─────────────────────────────────
+
+enum risk_level {
+  healthy
+  watch
+  critical
+}
+
+model aircraft {
+  id             Int     @id @default(autoincrement())
+  code           String  @unique @db.VarChar(16)
+  name           String  @db.VarChar(48)
+  aircraftRefId  Int     @unique @map("aircraft_ref_id")
+  cmapssUnitId   Int     @unique @map("cmapss_unit_id")
+  tailNumber     String? @map("tail_number") @db.VarChar(16)
+  aircraftModel  String? @map("aircraft_model") @db.VarChar(16)
+  homeBase       String? @map("home_base") @db.VarChar(16)
+
+  currentCycle Int        @default(1) @map("current_cycle")
+  rul          Int        @default(125)
+  missionReady Boolean    @default(true) @map("mission_ready")
+  worstPart    String?    @map("worst_part") @db.VarChar(16)
+  riskLevel    risk_level @default(healthy) @map("risk_level")
+  demoOffset   Int        @default(0) @map("demo_offset")
+  isActive     Boolean    @default(true) @map("is_active")
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt    DateTime   @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  aircraftRef   aircraft_ref       @relation(fields: [aircraftRefId], references: [id])
+  parts         aircraft_part[]
+  snapshots     health_snapshot[]
+  telemetry     engine_telemetry[]
+  componentHlth component_health[]
+  predictions   ml_prediction[]
+  workOrders    work_order[]
+  alerts        alert[]
+  bookings      agency_booking[]
+
+  @@index([missionReady])
+  @@index([riskLevel])
+  @@map("aircraft")
+}
+
+model part {
+  id          Int     @id @default(autoincrement())
+  code        String  @unique @db.VarChar(16)
+  label       String  @db.VarChar(32)
+  sortOrder   Int     @map("sort_order")
+  isSimulated Boolean @default(true) @map("is_simulated")
+  method      String  @db.VarChar(40)
+  agencyId    Int?    @map("agency_id")
+
+  agency      agency?          @relation(fields: [agencyId], references: [id])
+  aircraftPart aircraft_part[]
+  snapshots   health_snapshot[]
+  workOrders  work_order[]
+  alerts      alert[]
+  bookings    agency_booking[]
+
+  @@map("part")
+}
+
+model aircraft_part {
+  id                 Int        @id @default(autoincrement())
+  aircraftId         Int        @map("aircraft_id")
+  partId             Int        @map("part_id")
+  health             Decimal    @db.Decimal(4, 3)
+  riskLevel          risk_level @map("risk_level")
+  rul                Int?
+  doByCycle          Int?       @map("do_by_cycle")
+  worstComponent     String?    @map("worst_component") @db.VarChar(24)
+  spareId            Int?       @map("spare_id")
+  agencyId           Int?       @map("agency_id")
+  backInServiceDays  Int?       @map("back_in_service_days")
+  isSimulated        Boolean    @map("is_simulated")
+  updatedAt          DateTime   @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  aircraft aircraft @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  part     part     @relation(fields: [partId], references: [id])
+  spare    spare?   @relation(fields: [spareId], references: [id])
+  agency   agency?  @relation(fields: [agencyId], references: [id])
+
+  @@unique([aircraftId, partId])
+  @@index([aircraftId])
+  @@index([riskLevel])
+  @@index([health])
+  @@map("aircraft_part")
+}
+
+// ───────────────────────────────── TIME-SERIES & ML ─────────────────────────────────
+
+model health_snapshot {
+  id         Int        @id @default(autoincrement())
+  aircraftId Int        @map("aircraft_id")
+  partId     Int        @map("part_id")
+  cycle      Int
+  health     Decimal    @db.Decimal(4, 3)
+  riskLevel  risk_level @map("risk_level")
+  recordedAt DateTime   @default(now()) @map("recorded_at") @db.Timestamptz(6)
+
+  aircraft aircraft @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  part     part     @relation(fields: [partId], references: [id])
+
+  @@unique([aircraftId, partId, cycle])
+  @@index([aircraftId, partId, cycle])
+  @@map("health_snapshot")
+}
+
+model engine_telemetry {
+  id            Int     @id @default(autoincrement())
+  aircraftId    Int     @map("aircraft_id")
+  cycle         Int
+  cmapssUnitId  Int     @map("cmapss_unit_id")
+  setting1      Decimal @map("setting_1") @db.Decimal(10, 6)
+  setting2      Decimal @map("setting_2") @db.Decimal(10, 6)
+  setting3      Decimal @map("setting_3") @db.Decimal(10, 6)
+  s2   Decimal @map("s2")   @db.Decimal(12, 4)
+  s3   Decimal @map("s3")   @db.Decimal(12, 4)
+  s4   Decimal @map("s4")   @db.Decimal(12, 4)
+  s6   Decimal @map("s6")   @db.Decimal(12, 4)
+  s7   Decimal @map("s7")   @db.Decimal(12, 4)
+  s8   Decimal @map("s8")   @db.Decimal(12, 4)
+  s9   Decimal @map("s9")   @db.Decimal(12, 4)
+  s11  Decimal @map("s11")  @db.Decimal(12, 4)
+  s12  Decimal @map("s12")  @db.Decimal(12, 4)
+  s13  Decimal @map("s13")  @db.Decimal(12, 4)
+  s14  Decimal @map("s14")  @db.Decimal(12, 4)
+  s15  Decimal @map("s15")  @db.Decimal(12, 4)
+  s17  Decimal @map("s17")  @db.Decimal(12, 4)
+  s20  Decimal @map("s20")  @db.Decimal(12, 4)
+  s21  Decimal @map("s21")  @db.Decimal(12, 4)
+  regime       Int     @default(0)
+  source       String  @default("cmapss") @db.VarChar(16)
+  recordedAt   DateTime @default(now()) @map("recorded_at") @db.Timestamptz(6)
+
+  aircraft aircraft @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+
+  @@unique([aircraftId, cycle])
+  @@index([aircraftId, cycle])
+  @@map("engine_telemetry")
+}
+
+model component_health {
+  id         Int      @id @default(autoincrement())
+  aircraftId Int      @map("aircraft_id")
+  cycle      Int
+  fan        Decimal  @db.Decimal(4, 3)
+  hpc        Decimal  @db.Decimal(4, 3)
+  hpt        Decimal  @db.Decimal(4, 3)
+  lpt        Decimal  @db.Decimal(4, 3)
+  combustor  Decimal? @db.Decimal(4, 3)
+  lpc        Decimal? @db.Decimal(4, 3)
+  recordedAt DateTime @default(now()) @map("recorded_at") @db.Timestamptz(6)
+
+  aircraft aircraft @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+
+  @@unique([aircraftId, cycle])
+  @@map("component_health")
+}
+
+model ml_prediction {
+  id            Int      @id @default(autoincrement())
+  aircraftId    Int      @map("aircraft_id")
+  cycle         Int
+  rul           Int
+  fan           Decimal? @db.Decimal(4, 3)
+  hpc           Decimal? @db.Decimal(4, 3)
+  hpt           Decimal? @db.Decimal(4, 3)
+  lpt           Decimal? @db.Decimal(4, 3)
+  topSensors    Json     @map("top_sensors")
+  deviation     Json
+  modelVersion  String   @map("model_version") @db.VarChar(48)
+  latencyMs     Decimal  @map("latency_ms") @db.Decimal(8, 2)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  aircraft aircraft @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+
+  @@unique([aircraftId, cycle])
+  @@index([aircraftId, cycle])
+  @@map("ml_prediction")
+}
+
+// ───────────────────────────────── MAINTENANCE ─────────────────────────────────
+
+model agency {
+  id                     Int     @id @default(autoincrement())
+  agencyRefId            String  @unique @map("agency_ref_id") @db.VarChar(8)
+  name                   String  @db.VarChar(96)
+  type                   String? @db.VarChar(32)
+  location               String? @db.VarChar(32)
+  specialisation         String  @db.VarChar(24)
+  turnaroundDays         Int     @map("turnaround_days")
+  monthlyCapacitySlots   Int     @map("monthly_capacity_slots")
+  costMultiplier         Decimal @default(1.00) @map("cost_multiplier") @db.Decimal(3, 2)
+  freeSlotDays           Int     @default(1) @map("free_slot_days")
+
+  parts      part[]
+  assignments aircraft_part[]
+  bookings   agency_booking[]
+
+  @@index([specialisation])
+  @@map("agency")
+}
+
+model spare {
+  id              Int      @id @default(autoincrement())
+  partRefId       String   @unique @map("part_ref_id") @db.VarChar(8)
+  itemName        String   @map("item_name") @db.VarChar(96)
+  componentRefId  Int?     @map("component_ref_id")
+  componentName   String?  @map("component_name") @db.VarChar(48)
+  aircraftModel   String?  @map("aircraft_model") @db.VarChar(16)
+  stock           Int      @default(0)
+  minimumStock    Int      @default(0) @map("minimum_stock")
+  reorderQuantity Int      @default(0) @map("reorder_quantity")
+  supplier        String?  @db.VarChar(64)
+  leadTimeDays    Int      @map("lead_time_days")
+  unitCostInr     Int?     @map("unit_cost_inr")
+  storageLocation String?  @map("storage_location") @db.VarChar(32)
+  lastRestockDate DateTime? @map("last_restock_date") @db.Date
+  criticality     String?  @db.VarChar(8)
+
+  componentRef component_ref?  @relation(fields: [componentRefId], references: [id])
+  movements    stock_movement[]
+  aircraftPart aircraft_part[]
+
+  @@index([componentName])
+  @@map("spare")
+}
+
+enum work_order_status {
+  open
+  in_progress
+  done
+}
+
+enum priority_level {
+  low
+  medium
+  high
+}
+
+model work_order {
+  id          Int               @id @default(autoincrement())
+  reference   String            @unique @db.VarChar(16)
+  aircraftId  Int               @map("aircraft_id")
+  partId      Int               @map("part_id")
+  action      String            @db.VarChar(48)
+  dueDate     DateTime          @map("due_date") @db.Date
+  dueCycle    Int?              @map("due_cycle")
+  status      work_order_status @default(open)
+  priority    priority_level    @default(medium)
+  sourceRef   String?           @map("source_ref") @db.VarChar(12)
+  notes       String?
+  createdById Int?              @map("created_by")
+  createdAt   DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime          @updatedAt @map("updated_at") @db.Timestamptz(6)
+  startedAt   DateTime?         @map("started_at") @db.Timestamptz(6)
+  completedAt DateTime?         @map("completed_at") @db.Timestamptz(6)
+
+  aircraft  aircraft          @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  part      part              @relation(fields: [partId], references: [id])
+  createdBy users?            @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  bookings  agency_booking[]
+  movements stock_movement[]
+
+  @@index([aircraftId, status])
+  @@index([partId, status])
+  @@map("work_order")
+}
+
+model agency_booking {
+  id             Int      @id @default(autoincrement())
+  agencyId       Int      @map("agency_id")
+  aircraftId     Int      @map("aircraft_id")
+  partId         Int      @map("part_id")
+  workOrderId    Int?     @map("work_order_id")
+  bookedOn       DateTime @default(now()) @map("booked_on") @db.Date
+  slotDays       Int      @map("slot_days")
+  turnaroundDays Int      @map("turnaround_days")
+  leadTimeDays   Int      @default(0) @map("lead_time_days")
+  etaDate        DateTime @map("eta_date") @db.Date
+  completedAt    DateTime? @map("completed_at") @db.Timestamptz(6)
+  createdById    Int?     @map("created_by")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  agency    agency     @relation(fields: [agencyId], references: [id])
+  aircraft  aircraft   @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  part      part       @relation(fields: [partId], references: [id])
+  workOrder work_order? @relation(fields: [workOrderId], references: [id], onDelete: SetNull)
+  createdBy users?     @relation(fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([agencyId, etaDate])
+  @@map("agency_booking")
+}
+
+enum stock_reason {
+  reserve
+  restock
+  adjust
+  return
+}
+
+model stock_movement {
+  id          Int          @id @default(autoincrement())
+  spareId     Int          @map("spare_id")
+  delta       Int
+  reason      stock_reason
+  workOrderId Int?         @map("work_order_id")
+  userId      Int?         @map("user_id")
+  note        String?
+  createdAt   DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  spare     spare      @relation(fields: [spareId], references: [id], onDelete: Cascade)
+  workOrder work_order? @relation(fields: [workOrderId], references: [id], onDelete: SetNull)
+  user      users?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([spareId, createdAt])
+  @@map("stock_movement")
+}
+
+model technical_record {
+  id                Int      @id @default(autoincrement())
+  recordId          String   @unique @map("record_id") @db.VarChar(12)
+  aircraftRefId     Int      @map("aircraft_ref_id")
+  componentRefId    Int?     @map("component_ref_id")
+  agencyRefId       String?  @map("agency_ref_id") @db.VarChar(8)
+  partRefId         String?  @map("part_ref_id") @db.VarChar(8)
+  eventDate         DateTime @map("event_date") @db.Date
+  maintenanceType   String?  @map("maintenance_type") @db.VarChar(32)
+  faultType         String?  @map("fault_type") @db.VarChar(40)
+  action            String?
+  downtimeHours     Decimal? @map("downtime_hours") @db.Decimal(7, 1)
+  costInr           BigInt?  @map("cost_inr")
+  flightHoursAtEvent Decimal? @map("flight_hours_at_event") @db.Decimal(9, 1)
+  cyclesAtEvent     Int?     @map("cycles_at_event")
+  outcome           String?  @db.VarChar(16)
+
+  aircraftRef  aircraft_ref  @relation(fields: [aircraftRefId], references: [id])
+  componentRef component_ref? @relation(fields: [componentRefId], references: [id])
+  snags        snag[]
+
+  @@index([aircraftRefId, eventDate])
+  @@index([faultType])
+  @@map("technical_record")
+}
+
+model snag {
+  id                 Int      @id @default(autoincrement())
+  snagId             String   @unique @map("snag_id") @db.VarChar(12)
+  technicalRecordId  Int?     @map("technical_record_id")
+  aircraftRefId      Int      @map("aircraft_ref_id")
+  dateReported       DateTime @map("date_reported") @db.Date
+  reportedByRole     String?  @map("reported_by_role") @db.VarChar(16)
+  snagText           String   @map("snag_text")
+  severity           String   @db.VarChar(8)
+  resolutionText     String?  @map("resolution_text")
+
+  technicalRecord technical_record? @relation(fields: [technicalRecordId], references: [id], onDelete: SetNull)
+  aircraftRef     aircraft_ref      @relation(fields: [aircraftRefId], references: [id])
+
+  @@index([aircraftRefId, dateReported])
+  @@index([severity])
+  @@map("snag")
+}
+
+model alert {
+  id             Int      @id @default(autoincrement())
+  aircraftId     Int      @map("aircraft_id")
+  partId         Int      @map("part_id")
+  level          String   @db.VarChar(8)
+  message        String
+  cycle          Int?
+  health         Decimal? @db.Decimal(4, 3)
+  acknowledged   Boolean  @default(false)
+  ackedById      Int?     @map("acked_by")
+  ackedAt        DateTime? @map("acked_at") @db.Timestamptz(6)
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  aircraft aircraft @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  part     part     @relation(fields: [partId], references: [id])
+  ackedBy  users?   @relation(fields: [ackedById], references: [id], onDelete: SetNull)
+
+  @@index([acknowledged, createdAt])
+  @@index([aircraftId, partId])
+  @@map("alert")
+}
+
+model audit_log {
+  id        Int      @id @default(autoincrement())
+  entity    String   @db.VarChar(32)
+  entityId  String   @map("entity_id") @db.VarChar(32)
+  action    String   @db.VarChar(24)
+  actorId   Int?     @map("actor_id")
+  actorName String   @map("actor_name") @db.VarChar(48)
+  at        DateTime @default(now()) @db.Timestamptz(6)
+  before    Json?
+  after     Json?
+  requestId String?  @map("request_id") @db.VarChar(32)
+
+  actor users? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([entity, entityId, at])
+  @@index([actorId, at])
+  @@index([at])
+  @@map("audit_log")
+}

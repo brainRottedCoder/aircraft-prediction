@@ -1,0 +1,16 @@
+# Build context is the repository root; only the frontend half is needed here.
+.git
+.github
+backend
+docs
+ml
+scripts
+data
+demo
+**/node_modules
+**/dist
+**/.venv
+**/__pycache__
+**/.env
+docker-compose*.yml
+README.md

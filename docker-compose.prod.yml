@@ -1,0 +1,108 @@
+# Production overrides for the Fleet Digital Twin stack.
+#
+#   cp .env.example .env && set real secrets, then:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# This file is an *override*, not a standalone stack: it carries no `image:` or `build:`
+# keys for `web`, so running it alone fails with "service web has neither an image nor a
+# build context specified". Always pass both files, as above.
+#
+# What changes relative to development:
+#   • FDT_ENVIRONMENT=production, which makes the API refuse to boot on the committed
+#     development JWT secret.
+#   • no published ports on `api` or `db` — only `web` is reachable, so the monolith and
+#     the database exist solely on the internal network behind the nginx BFF.
+#   • explicit resource limits, log rotation and a hardened nginx.
+
+name: fdt
+
+x-logging: &logging
+  driver: json-file
+  options: { max-size: "10m", max-file: "3" }
+
+services:
+  db:
+    # Not published: the API reaches it over the compose network.
+    ports: !reset []
+    command:
+      - postgres
+      # Demo-scale dataset, so these are chosen rather than inherited from the host.
+      - -c
+      - max_connections=100
+      - -c
+      - shared_buffers=256MB
+      - -c
+      - effective_cache_size=768MB
+      - -c
+      - work_mem=8MB
+      - -c
+      - maintenance_work_mem=128MB
+      - -c
+      - wal_compression=on
+      # Anything slower than 500 ms is worth a log line in production.
+      - -c
+      - log_min_duration_statement=500
+    shm_size: 256mb
+    restart: always
+    logging: *logging
+
+  api:
+    environment:
+      FDT_ENVIRONMENT: production
+      FDT_LOG_LEVEL: ${FDT_LOG_LEVEL:-INFO}
+
+      # Where the telemetry comes from, and the one setting that decides whether this
+      # deployment shows a live console at all:
+      #
+      #   FDT_DEMO_MODE=true   the replay engine walks the seeded C-MAPSS engines and
+      #                        publishes over the WebSocket. Self-contained: a fresh
+      #                        `up -d` gives a working digital twin with no ingest.
+      #   FDT_DEMO_MODE=false  nothing replays. The twin only moves if something posts to
+      #                        POST /api/v1/telemetry — correct for a real deployment with
+      #                        a real feed, and a static console with none.
+      #
+      # These used to be mutually exclusive with the environment: config.py refused to
+      # boot on `production` + `demo_mode=true`, while the replay only runs when
+      # demo_mode is true. Every combination was therefore broken — production was a dead
+      # twin, and staging was the only thing that worked, which is why render.yaml had to
+      # misreport itself. `demo_mode` picks a data source; it is not a security control, so
+      # it no longer conflicts with `production`.
+      FDT_DEMO_MODE: ${FDT_DEMO_MODE:-true}
+
+      # Nobody can shell into this container to run `python -m app.seed.run`. Without this
+      # a fresh volume has no rows at all and every login returns 401 — the same failure as
+      # an empty `users` table. It is idempotent and now reconciles accounts separately
+      # from the fleet, so leaving it on costs one COUNT per restart.
+      FDT_SEED_ON_BOOT: ${FDT_SEED_ON_BOOT:-true}
+
+      # Same-origin only: in production the browser never talks to the API cross-origin,
+      # because nginx proxies it. Leave empty to accept no browser origin at all.
+      FDT_CORS_ORIGINS: ${FDT_CORS_ORIGINS:-}
+    ports: !reset []
+    deploy:
+      # Exactly one replica: the replay engine is an in-process task (docs/11 §2), so a
+      # second replica would run a second replay loop and double-advance every aircraft.
+      replicas: 1
+      resources:
+        limits: { cpus: "${API_CPUS:-2.0}", memory: "${API_MEMORY:-2g}" }
+        reservations: { memory: "512m" }
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    restart: always
+    logging: *logging
+
+  web:
+    deploy:
+      resources:
+        limits: { cpus: "${WEB_CPUS:-1.0}", memory: "${WEB_MEMORY:-256m}" }
+        reservations: { memory: "64m" }
+    # The image is already non-root; no-new-privileges blocks any setuid escalation.
+    # The root filesystem stays writable because nginx writes its pid, temp bodies and
+    # proxy buffers to /var/run and /var/cache — a read-only mount would need those as
+    # tmpfs, and the entrypoint's envsubst pass would then fail on /etc/nginx/conf.d.
+    security_opt:
+      - no-new-privileges:true
+    restart: always
+    logging: *logging

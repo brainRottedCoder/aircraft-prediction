@@ -1,0 +1,148 @@
+# Fleet Digital Twin — development stack.
+#
+#   docker compose up --build       →  http://localhost:8080
+#
+# Three containers, one origin:
+#   web    nginx, serves the built SPA and proxies /api + /ws to the monolith
+#   api    FastAPI monolith (REST + WebSocket + ML inference + replay engine)
+#   db     PostgreSQL 16
+#
+# Plus one short-lived `model-fetch` job (see below) that stages the trained boosters
+# before the API starts.
+#
+# Production differences live in docker-compose.prod.yml. Do not edit that file to tune
+# a development annoyance; override with a `docker-compose.override.yml` instead.
+
+name: fdt
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fdt}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fdt}
+      POSTGRES_DB: ${POSTGRES_DB:-fdt}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      # Bound to loopback only: handy for psql and for the throwaway test database,
+      # never reachable from the network.
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-fdt} -d ${POSTGRES_DB:-fdt}"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+
+  # Stages the trained boosters into backend/data/ml/<variant>/ before the API starts.
+  #
+  # C-MAPSS has a public mirror and scripts/fetch-cmapss.sh fetches it, but the boosters
+  # were only ever copyable from the notebook's Google Drive. Without this job a fresh
+  # checkout mounted an empty /app/data/ml, the loader found nothing, and every
+  # prediction came from `rul = 125 - cycle` — silently, because FDT_ML_FALLBACK defaults
+  # to true.
+  #
+  # It exits 0 when there is nothing to do (already staged, or no URL configured and the
+  # directory is populated) so a developer without access can still bring the stack up
+  # and see the fallback; /healthz reports `degraded` in that case. It is the only
+  # service that mounts the artifact directory read-write — the API itself keeps it :ro
+  # so it cannot rewrite the model it is serving.
+  #
+  # Runs as root purely to create and write the artifact directory: backend/data/ml is
+  # created on the host by whatever ran first, and the image's own user (fdt, uid 999)
+  # cannot write into a root-owned one. The files it writes are 644, so the API still
+  # reads them as fdt. Nothing here executes downloaded content — it is copied, then
+  # validated against the contract by scripts/stage_ml_artifacts.py.
+  model-fetch:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    profiles: ["bootstrap"]
+    user: "0:0"
+    environment:
+      FDT_DATA_DIR: /app/data
+      FDT_ML_VARIANT: ${FDT_ML_VARIANT:-all}
+      FDT_ML_DATASET: ${FDT_ML_DATASET:-FD001}
+      FDT_ML_ARTIFACTS_URL: ${FDT_ML_ARTIFACTS_URL:-}
+    volumes:
+      - ./backend/data/ml:/app/data/ml
+    entrypoint: ["python", "-m", "scripts.fetch_ml_artifacts"]
+    restart: "no"
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      FDT_ENVIRONMENT: ${FDT_ENVIRONMENT:-development}
+      FDT_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-fdt}:${POSTGRES_PASSWORD:-fdt}@db:5432/${POSTGRES_DB:-fdt}
+      FDT_JWT_SECRET: ${FDT_JWT_SECRET:?set FDT_JWT_SECRET in .env — see .env.example}
+      FDT_LOG_LEVEL: ${FDT_LOG_LEVEL:-INFO}
+      # Same-origin in Docker, so no cross-origin allowlist is needed for the browser.
+      # This entry exists only for `npm run dev` against the containerised API.
+      FDT_CORS_ORIGINS: ${FDT_CORS_ORIGINS:-http://localhost:5173,http://localhost:8080}
+      FDT_DEMO_MODE: ${FDT_DEMO_MODE:-true}
+      FDT_DEMO_TICK_SECONDS: ${FDT_DEMO_TICK_SECONDS:-1.2}
+      FDT_RUL_CAP: ${FDT_RUL_CAP:-125}
+      # Variant-driven artifact resolution. Do NOT pin FDT_ML_MODEL_PATH here: it
+      # overrides only the model, leaving the contract to resolve from the variant, and
+      # the two then disagree about which directory the artifact set lives in. A
+      # container started that way degraded to the deterministic fallback with a fully
+      # valid model on disk.
+      FDT_ML_VARIANT: ${FDT_ML_VARIANT:-all}
+      FDT_ML_DATASET: ${FDT_ML_DATASET:-FD001}
+      FDT_ML_FALLBACK: ${FDT_ML_FALLBACK:-true}
+      FDT_DATA_DIR: /app/data
+    volumes:
+      # 43 MB of NASA C-MAPSS telemetry: fetched by scripts/fetch-cmapss.sh, not committed.
+      - ./backend/data/cmapss:/app/data/cmapss:ro
+      # Trained boosters: fetched by scripts/fetch_ml_artifacts.py (the `model-fetch`
+      # service above), not committed.
+      - ./backend/data/ml:/app/data/ml:ro
+    ports:
+      # Exposed so /docs and /redoc are reachable without going through nginx. Loopback
+      # only; docker-compose.prod.yml removes this port entirely.
+      - "127.0.0.1:${API_PORT:-8000}:8000"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+      args:
+        # Gates the demo sign-in shortcut in the bundle. Defaults off, so the committed
+        # fixture credentials are not shipped to whoever loads the page. Set
+        # VITE_DEMO_MODE=true in .env to keep the one-click demo locally.
+        VITE_DEMO_MODE: ${VITE_DEMO_MODE:-false}
+    depends_on:
+      api: { condition: service_healthy }
+    ports:
+      - "${WEB_PORT:-8080}:8080"
+    restart: unless-stopped
+
+# Throwaway database for the pytest suite, which drops and recreates the public
+  # schema on every session. Behind the `test` profile so `docker compose up` never
+  # starts it; `make test` brings it up and tears it down around the run.
+  db-test:
+    profiles: ["test"]
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: fdt
+      POSTGRES_PASSWORD: fdt
+      POSTGRES_DB: fdt_test
+    tmpfs:
+      # An in-memory database: nothing to persist, and nothing survives a crash.
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fdt -d fdt_test"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+      start_period: 5s
+
+volumes:
+  db-data:

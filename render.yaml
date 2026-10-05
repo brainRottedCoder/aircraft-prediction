@@ -1,0 +1,127 @@
+# Render blueprint — single free web service + Aiven free Postgres.
+#
+# One service, not two, and that is not a simplification: `frontend/src/lib/api.js`
+# derives both its REST base and its WebSocket URL from `window.location.origin`, and a
+# Render Static Site can only do redirects and headers, never reverse-proxy `/api` or
+# upgrade `/ws`. Splitting the tiers would break every API call. Serving the Vite build
+# from the FastAPI process keeps REST and the WebSocket same-origin, which also removes
+# CORS from the picture entirely.
+#
+# Database: create a free PostgreSQL service (Render's own, or Aiven, or Neon) and paste
+# its URL into FDT_DATABASE_URL below.
+#
+# Paste it EXACTLY as the provider gives it. A bare `postgres://...` is fine — Settings
+# rewrites the bare libpq schemes onto `postgresql+psycopg://` for you, because SQLAlchemy 2
+# will not load the pinned psycopg (v3) driver otherwise and the failure reads like a broken
+# build. Keep `sslmode=require` if the provider includes it.
+#
+# Set `region` to match the database service's region.
+
+services:
+  - type: web
+    name: fleet-digital-twin
+    runtime: python
+    plan: free
+    region: singapore
+
+    buildCommand: >-
+      npm --prefix frontend ci &&
+      npm --prefix frontend run build &&
+      pip install ./backend &&
+      (bash scripts/fetch-cmapss.sh --subset FD001 --quiet || true)
+
+    # `cd backend` is load-bearing: alembic.ini has `script_location = alembic` and
+    # `prepend_sys_path = .`, both relative to CWD, so alembic cannot run from the
+    # repository root.
+    #
+    # `--workers 1` is not a free-tier limit and must not be raised: the replay engine
+    # is an in-process asyncio task, so a second worker would run a second replay loop
+    # and double-advance every aircraft.
+    #
+    # `--port $PORT` because Render injects the port; the Dockerfile's 8000 will not
+    # work. `--proxy-headers` so uvicorn trusts X-Forwarded-*, without which every
+    # client IP in audit_log becomes Render's proxy.
+    startCommand: >-
+      cd backend &&
+      alembic upgrade head &&
+      uvicorn app.main:app --host 0.0.0.0 --port $PORT --workers 1 --proxy-headers
+
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+
+    envVars:
+      # Pinned so a Render default bump cannot drift past pyproject's
+      # `requires-python = ">=3.11"`. Honoured during the build, so it must be set here
+      # rather than on the service only.
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: NODE_VERSION
+        value: "20.11.1"
+
+      # `production` is honest here and requires a generated FDT_JWT_SECRET (below),
+      # which is the only thing that setting actually guards. It previously had to claim
+      # `staging` purely to be allowed to run with FDT_DEMO_MODE=true, since the replay
+      # engine is what feeds the live twin — a misreport that made the deployment's real
+      # security posture invisible in its own config.
+      - key: FDT_ENVIRONMENT
+        value: production
+      - key: FDT_DEMO_MODE
+        value: "true"
+      - key: FDT_LOG_LEVEL
+        value: INFO
+
+      # The only origin that may call this API. ws.py skips its origin check entirely
+      # when this is empty, which would let any site open /ws/fleet with a valid token;
+      # setting it to the service's own URL keeps the check meaningful. Render PR
+      # previews get random onrender.com URLs and need their origin added here.
+      - key: FDT_CORS_ORIGINS
+        value: https://fleet-digital-twin.onrender.com
+
+      # Absolute, because the process runs from backend/ and these two paths are
+      # resolved relative to the CWD.
+      - key: FDT_DATA_DIR
+        value: /opt/render/project/src/backend/data
+      - key: FDT_WEB_DIST
+        value: /opt/render/project/src/frontend/dist
+
+      # The artifacts are committed to git (backend/data/ml/all, ~1.2 MB), so there is
+      # nothing to fetch and FDT_ML_ARTIFACTS_URL stays unset.
+      #
+      # Fallback off on purpose: with the booster present it cannot trigger, and if it
+      # ever did, every prediction would silently become `rul = 125 - cycle`.
+      - key: FDT_ML_VARIANT
+        value: all
+      - key: FDT_ML_DATASET
+        value: FD001
+      - key: FDT_ML_FALLBACK
+        value: "false"
+
+      # Aiven free caps max_connections at 20. The defaults (5 + 10 overflow) could
+      # reach 15 from one instance before Alembic and transients are counted; these
+      # leave ample headroom.
+      - key: FDT_DB_POOL_SIZE
+        value: "3"
+      - key: FDT_DB_MAX_OVERFLOW
+        value: "2"
+
+      # Without a horizon the replay engine's four append-only tables grow at a
+      # measured ~36 KB/s (~93 GB/month) and fill this 1 GB plan in about eight hours.
+      # 1h holds ~141 MB steady state and stays ~17x above the ~3.5 min wall-clock
+      # lifetime of one engine's cycle range, so the history chart sees no gaps.
+      # Cost is linear in the horizon: 3h would be ~400 MB, 40% of the disk.
+      # See app/services/retention.py.
+      - key: FDT_TELEMETRY_RETENTION_HOURS
+        value: "1"
+      - key: FDT_RETENTION_INTERVAL_SECONDS
+        value: "300"
+
+      # Nobody can shell into a Render free service to run `python -m app.seed.run`.
+      # This no-ops once any aircraft exists, so it costs one COUNT per cold start.
+      - key: FDT_SEED_ON_BOOT
+        value: "true"
+
+      - key: FDT_JWT_SECRET
+        generateValue: true
+
+      - key: FDT_DATABASE_URL
+        sync: false

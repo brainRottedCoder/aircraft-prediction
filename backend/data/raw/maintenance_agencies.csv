@@ -1,0 +1,7 @@
+agency_id,agency_name,type,location,specialisation,average_turnaround_days,capacity_slots_per_month,cost_multiplier
+MA001,AeroCore Base Repair,Base Repair Depot,Central Depot,general,13,40,1.0
+MA002,SwiftWing Field Services,Field Maintenance Unit,Base-A,general,3,19,0.82
+MA003,Vector Engine Works,OEM Service Centre,Base-C,engine,24,11,1.45
+MA004,Skyline Avionics MRO,Third-Party MRO,Base-B,avionics,9,25,1.11
+MA005,HydraFlight Services,Third-Party MRO,Base-D,hydraulics,11,23,1.09
+MA006,RapidAir Field Support,Field Maintenance Unit,Base-E,general,3,16,0.86

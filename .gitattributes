@@ -1,0 +1,47 @@
+# Normalise line endings: the API runs in Linux containers while the frontend is often
+# edited on Windows. Without this, CRLF in a shell script makes it fail on the server.
+* text=auto eol=lf
+
+*.py   text diff=python
+*.js   text diff=javascript
+*.jsx  text diff=javascript
+*.css  text diff=css
+*.html text diff=html
+*.md   text
+*.json text
+*.yml  text
+*.yaml text
+*.toml text
+*.sh   text eol=lf
+*.sql  text
+Dockerfile      text
+.dockerignore   text
+.gitattributes  text
+.gitignore      text
+
+# ── Binary assets ──────────────────────────────────────────────────────────────
+# Declared binary so git never attempts a text diff and never rewrites line endings
+# inside them. The ~9 MB of 3D assets are deliberately NOT under Git LFS: requiring
+# `git lfs install` on every clone would leave a fresh checkout with 130-byte pointer
+# files and a blank viewer, which is a worse failure than a heavier repository.
+#
+# To move them to LFS (recommended once the repository is published):
+#   git lfs install
+#   git lfs track "frontend/public/models/*.glb" "frontend/public/models/*.gz"
+#   git add .gitattributes && git add --force frontend/public/models
+#   git commit -m "chore(assets): move 3D models to Git LFS"
+#
+*.glb    binary
+*.glTF   binary
+*.gltf   binary
+*.bin    binary
+*.gz     binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.ico    binary
+*.woff   binary
+*.woff2  binary
+*.mp4    binary
+*.pdf    binary
+*.ipynb  text eol=lf

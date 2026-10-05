@@ -1,0 +1,23 @@
+# Build context is the repository root (so `backend/` and `frontend/` paths resolve),
+# but only the backend half is needed here.
+.git
+.github
+frontend
+docs
+ml
+scripts
+data
+demo
+**/node_modules
+**/dist
+**/.venv
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/.env
+backend/data/cmapss
+backend/data/ml
+docker-compose*.yml
+README.md
